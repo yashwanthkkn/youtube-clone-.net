@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-side-nav',
@@ -9,7 +9,14 @@ export class SideNavComponent implements OnInit {
 
   constructor() { }
 
+
+  @Output() extentNavEvent = new EventEmitter<string>();
   ngOnInit(): void {
   }
+
+  extend(){
+    this.extentNavEvent.emit('extend');
+  }
+
 
 }
