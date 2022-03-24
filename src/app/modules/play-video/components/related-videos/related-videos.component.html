@@ -1,0 +1,21 @@
+<div class="side-video">
+    
+<div class="video-card">
+    <img src="/assets/img/image.jpg" alt="">
+    <div class="description">
+        <h4>Git & GitHub Tutorial</h4>
+        <p class="channel-name">Presidio</p>
+        <div class="views-uploaded">
+            <p>197K views</p>
+            <p>4 years ago</p>
+        </div>
+    </div>
+    <div class="triple-dot" (click)="onTrippleDotClick()">
+        <span></span><span></span><span></span>
+    </div>
+    <div class="popup-display" *ngIf="isTripleDotClicked">
+        <app-popup></app-popup>
+    </div>
+
+</div>
+</div>
