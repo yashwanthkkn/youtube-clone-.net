@@ -1,6 +1,7 @@
 .card{
-    width: 250px;
+    width: 265px;
     height: 300px;
+    margin: 10px;
     .thumbnail{
         width: inherit;
         height: 150px;
@@ -9,8 +10,11 @@
             width: inherit;
             height: inherit;
         }
+        @media (max-width: 768px){
+            height: 180px;
+        }
     }
-    margin: 10px;
+
     .info{
         display: flex;
         margin-top: 1rem;
@@ -39,5 +43,8 @@
                 font-size: 12px;
             }
         }
+    }
+    @media (max-width: 768px){
+        width: 320px;
     }
 }

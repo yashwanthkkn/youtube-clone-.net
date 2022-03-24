@@ -9,6 +9,9 @@
     flex-direction: column;
     align-items: center;
     background-color: white;
+    @media (max-width: 768px){
+        display: none;
+    }
 }
 
 .menu-icon{
