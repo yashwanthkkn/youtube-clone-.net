@@ -1,15 +1,13 @@
 .ext-nav-wrap{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
     background-color: white;
     width: 0px;
     height: 100%;
-    overflow: scroll;
-    overflow-x: hidden;
-    overflow-y: hidden;
     transition: 0.5s;
+    overflow: hidden;
     .header{
         display: flex;
         padding-left: 26px;
@@ -31,9 +29,9 @@
     }
 
     .flow-nav{
-        max-height: inherit;
-        overflow:scroll;
-        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 100%;
+        
         .title{
             margin-left: 26px;
             margin-top: 0.5rem;
