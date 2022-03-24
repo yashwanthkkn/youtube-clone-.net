@@ -1,0 +1,45 @@
+.history{
+    .watch-history{
+        display: flex;
+        position: relative;
+        .history-list{
+            width: calc(100% - 425px);
+            background-color: #f9f9f9;
+            padding: 20px 80px 20px 80px;
+            .header .title{
+                p{
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: #030303;
+                }
+            }
+            .day p{
+                font-size: 20px;
+                font-weight: 400;
+                color: #030303;
+                padding: 16px 0;
+                line-height: 2.2rem;
+            }
+        }
+        .history-filters{
+            padding:0 30px;
+            position: fixed;
+            right: 0;
+            width: 425px;
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+        @media (max-width: 768px){
+            flex-direction: column-reverse;
+            .history-list{
+                width: 100%;
+                padding: 20px;
+            }
+            .history-filters{
+                width: 100%;
+                position: unset;
+            }
+        }
+        
+    }
+}
