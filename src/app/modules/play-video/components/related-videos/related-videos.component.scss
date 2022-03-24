@@ -1,0 +1,49 @@
+.video-card{
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    position: relative;
+    // margin-left: 20px;
+    // border: 1px solid black;
+    img{
+        width: 150px;
+        height: 80px;
+    }
+    .description{
+        display: flex;
+        flex-direction: column;
+        .channel-name{
+            margin-top: 20px;
+        }
+
+        .views-uploaded{
+            display: flex;
+            font-size: 14px;
+            margin-top: 5px;
+            // margin-top: 20px;
+        }
+    }
+
+    .triple-dot{
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+       
+        span{
+            width: 3px;
+            height: 3px;
+            background-color: black;
+            border-radius: 100px;
+        }
+    }
+    .triple-dot:hover{
+        cursor: pointer;
+    }
+}
+.popup-display{
+    position: absolute;
+    top:20px;
+    margin-left: 150px;
+    z-index: 999;
+   
+}
