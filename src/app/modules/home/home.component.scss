@@ -1,3 +1,5 @@
+@import "/src/_variables.scss";
+
 .home-wrap{
     margin-top: 56px;
     height: 100%;
@@ -16,9 +18,9 @@
         overflow: scroll;
         overflow-x: hidden;
         overflow-y: hidden;
-        border-bottom: #eee solid 1px;
+        border-bottom: $content-background-secondary solid 1px;
         .label-item{
-            background-color: #eee;
+            background-color: $content-background-secondary;
             padding: 0.5rem 1rem;
             border-radius: 50px;
             font-size: 14px;
