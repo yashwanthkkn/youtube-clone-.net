@@ -1,0 +1,86 @@
+@import '/src/_variables.scss';
+
+.search-history{
+    margin-top: 20px;
+    display: inline-block;
+    margin: 20px 10px 10px 5px;
+    padding: 10px 0;
+    border-bottom: 1px solid $secondary;
+    position: relative;
+    i{
+        margin-left: 10px;
+        margin-right: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    input{
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 400;
+        color: $primary;
+        background-color: transparent;
+        &:focus{
+            outline: none;
+        }
+    }
+    &:focus-within::after{
+        content: '';
+        height: 1px;
+        width: 100%;
+        background-color: $secondary;
+        position: absolute;
+        animation: border-line .5s;
+        bottom: 0;
+    }
+    @keyframes border-line{
+        0%{
+            width: 0;
+        }
+        100%{
+            width: 100%;
+        }
+    }
+}   
+.history-type{
+    .history-type-head{
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        p{
+            font-size: 18px;
+            margin-left: 5px;
+        }
+    }
+    .history-type-item{
+        padding: 20px 10px 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        label{
+            font-size: 16px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        input{
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+.history-actions{
+    .history-actions-item{
+        padding: 35px 20px 0 20px;
+        p{
+            font-size: 16px;
+            color: $secondary;
+            text-transform: uppercase;
+            font-weight: 500;
+            i{
+                margin-right: 20px;
+                font-size: 16px;
+            }
+        }
+    }
+}

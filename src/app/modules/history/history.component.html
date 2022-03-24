@@ -10,31 +10,11 @@
                 <p>Today</p>
             </div>
             <div class="history-items">
-                <app-history-item></app-history-item>
+                <app-history-item *ngFor="let i of [0,0,0,0,0,0,0,0]"></app-history-item>
             </div>
         </div>
         <div class="history-filters">
-            <div class="search-history">
-                <div class="search-history-input">
-                    <input type="text" placeholder="Search History">
-                </div>
-            </div>
-            <div class="history-type">
-                <div class="history-type-item">
-                    <p>All</p>
-                </div>
-                <div class="history-type-item">
-                    <p>Watch</p>
-                </div>
-                <div class="history-type-item">
-                    <p>Download</p>
-                </div>
-            </div>
-            <div class="history-actions">
-                <div class="history-actions-item">
-                    <p>Clear History</p>
-                </div>
-            </div>
+            <app-history-filter></app-history-filter>
         </div>
     </div>
 </div>

@@ -1,34 +1,36 @@
+@import '/src/_variables.scss';
+
 .history{
     .watch-history{
         display: flex;
         position: relative;
         .history-list{
             width: calc(100% - 425px);
-            background-color: #f9f9f9;
+            background-color: $content-background;
             padding: 20px 80px 20px 80px;
             .header .title{
                 p{
                     font-size: 20px;
                     font-weight: bold;
-                    color: #030303;
+                    color: $primary;
                 }
             }
             .day p{
                 font-size: 20px;
                 font-weight: 400;
-                color: #030303;
+                color: $primary;
                 padding: 16px 0;
                 line-height: 2.2rem;
             }
         }
         .history-filters{
-            padding:0 30px;
+            padding:0 30px 30px 30px;
             position: fixed;
             right: 0;
             width: 425px;
-            background-color: #f1f1f1;
+            background-color: $content-background-secondary;
             height: 100%;
-        }
+        }        
         @media (max-width: 768px){
             flex-direction: column-reverse;
             .history-list{
