@@ -1,9 +1,11 @@
 @import '/src/_variables.scss';
 
 .history{
+    padding-left: 20px;
     .watch-history{
         display: flex;
         position: relative;
+        padding-top: 56px;
         .history-list{
             width: calc(100% - 425px);
             background-color: $content-background;
