@@ -9,13 +9,7 @@ export class SideNavComponent implements OnInit {
 
   constructor() { }
 
-
-  @Output() extentNavEvent = new EventEmitter<string>();
   ngOnInit(): void {
-  }
-
-  extend(){
-    this.extentNavEvent.emit('extend');
   }
 
 
