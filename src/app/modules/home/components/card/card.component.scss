@@ -1,0 +1,43 @@
+.card{
+    width: 250px;
+    height: 300px;
+    .thumbnail{
+        width: inherit;
+        height: 150px;
+        background-color: #eee;
+        .img{
+            width: inherit;
+            height: inherit;
+        }
+    }
+    margin: 10px;
+    .info{
+        display: flex;
+        margin-top: 1rem;
+        .logo{
+            width: 25%;   
+            text-align: center;
+            .logo-img{
+                width: 70%;
+                height: 40px;
+                border-radius: 60%;
+            } 
+        }
+        .desc-wrap{
+            color: #606060;
+            .desc{
+                font-size: 14px;
+                font-weight: 600;
+                color: #303030;
+            }
+            .channel{
+                font-size: 12px;
+                margin-top: 0.5rem;
+            }
+            .meta{
+                margin-top: 0.25rem;
+                font-size: 12px;
+            }
+        }
+    }
+}

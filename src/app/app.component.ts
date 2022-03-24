@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ExtendedNavComponent } from './components/extended-nav/extended-nav.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  @ViewChild(ExtendedNavComponent,{static:true}) extNav : ExtendedNavComponent | undefined;
+
+  extend(){
+    this.extNav?.extend();
+  }
 }

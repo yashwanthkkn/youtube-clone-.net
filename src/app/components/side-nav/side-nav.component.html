@@ -1,1 +1,19 @@
-<p>side-nav works!</p>
+<div class="nav-wrap">
+    <div class="menu-icon" (click)="extend()" ><i class="fas fa-bars"></i></div>
+    <a class="nav-item" routerLink="/home">
+        <div class="nav-icon"><i class="fas fa-home"></i></div>
+        <div class="nav-text">Home</div>
+    </a>
+    <a class="nav-item" routerLink="/home">
+        <div class="nav-icon"><i class="fas fa-compass"></i></div>
+        <div class="nav-text">Explore</div>
+    </a>
+    <a class="nav-item" routerLink="/history">
+        <div class="nav-icon"><i class="fas fa-clock"></i></div>
+        <div class="nav-text">History</div>
+    </a>
+    <a class="nav-item" routerLink="/library">
+        <div class="nav-icon"><i class="fas fa-photo-video"></i></div>
+        <div class="nav-text">Library</div>
+    </a>
+</div>

@@ -1,0 +1,38 @@
+.nav-wrap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 72px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.menu-icon{
+    padding: 1rem 0rem;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.nav-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0rem;
+    .nav-icon{
+        font-size: 20px;
+    }
+    .nav-text{
+        font-size: 10px;
+        margin-top: 0.25rem;
+    }
+}
+
+.nav-item:hover{
+    cursor: pointer;
+    background-color: #eee;
+}
