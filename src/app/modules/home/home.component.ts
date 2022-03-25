@@ -32,6 +32,8 @@ export class HomeComponent implements OnInit {
       label.scrollLeft = label?.scrollLeft + e.deltaY;
     });
     label?.addEventListener('scroll', (e: any) => {
+      this.labelScrollWidth = label?.scrollWidth;
+      this.labelWidth = label?.clientWidth;
       if(label?.scrollLeft == 0) {
         this.isLabelLeftScrollable = false;
       }
