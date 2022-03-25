@@ -1,7 +1,9 @@
 .comment{
     display: flex;
     // border: 1px solid black;
-    height: 120px;
+    font-size: 14px;
+    height: 150px;
+    font-weight: 400;
     margin-top: 10px;
     img{
         width:40px;
@@ -27,11 +29,14 @@
         .reaction{
             display: flex;
             gap:15px;
-            margin-top: 5px;
+            margin-top: 10px;
             font-size: 14px;
             a{
                 color: #606060;
                 text-decoration: none;
+            }
+            i{
+                margin-right: 3px;
             }
         }
        .view-reply{

@@ -4,15 +4,17 @@
             <img src="/assets/img/image.jpg" alt="img" srcset="" />
         </div>
         <div class="video-description">
-            <h3>How to use Git When working with a team?</h3>
+            <p class="video-title">How to use Git When working with a team?</p>
             <div class="views">
                 <p>60,515 views Sep 14,2020</p>
                 <div class="likes">
-                    <h4><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>LIKE</h4>
-                    <h4>DISLIKE</h4>
-                    <h4>SHARE</h4>
-                    <h4>SAVE</h4>
-                    <h4>...</h4>
+                    <div><i class="fa fa-thumbs-o-up" aria-hidden="true" ></i>LIKE
+                    </div>
+                    <div><i class="fa fa-thumbs-o-down" aria-hidden="true"></i>DISLIKE</div>
+                    <div> <i class="fa fa-share" aria-hidden="true"></i> SHARE</div>
+                    <div><i class="fa fa-scissors" aria-hidden="true"></i>CLIP</div>
+                    <div><i class="fa fa-floppy-o" aria-hidden="true"></i>SAVE</div>
+                    <div>...</div>
                 </div>
             </div>
         </div>
@@ -35,9 +37,9 @@
             </div>
         </div>
 
-        <div class="comment-section">
+        <!-- <div class="comment-section">
             <div class="top-section">
-                <h3>63 Comments</h3>
+                <div>63 Comments</div>
                 <div class="sort-by">
                     <div class="span-tags">
                         <span></span>
@@ -56,13 +58,33 @@
             </div>
         </div>
 
+    </div> -->
+    
+   </div>
+   <div class="right-container" >
+    <div *ngFor="let item of array">
+        <app-related-videos></app-related-videos>
     </div>
-    <div class="right-container" >
-        <div *ngFor="let item of array">
-            <app-related-videos></app-related-videos>
+   </div>
+</div>
+
+<div class="comment-section">
+    <div class="top-section">
+        <div>63 Comments</div>
+        <div class="sort-by">
+            <div class="span-tags">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <p>SORT BY</p>
         </div>
-       
-        
     </div>
-   
+    <div class="comment-input">
+        <img src="/assets/img/image.jpg" alt="img">
+        <input type="text" placeholder="Commenting publicly as Sam Raj AB">
+    </div>
+    <div class="comments" *ngFor="let item of array">
+        <app-comments></app-comments>
+    </div>
 </div>

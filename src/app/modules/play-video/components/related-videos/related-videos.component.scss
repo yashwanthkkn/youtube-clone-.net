@@ -1,8 +1,10 @@
+@import "/src/_variables";
 .video-card{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 350px;
     position: relative;
+    font-size: $font-size;
     // margin-left: 20px;
     // border: 1px solid black;
     img{
@@ -12,14 +14,25 @@
     .description{
         display: flex;
         flex-direction: column;
+        .title{
+            font-weight: 500;
+            padding-top: 10px;
+            
+        }
         .channel-name{
-            margin-top: 20px;
+            margin-top: 10px;
+            font-size: $font-size;
+            color: $secondary;
         }
 
         .views-uploaded{
             display: flex;
-            font-size: 14px;
+            font-size: 13px;
+            color: $secondary;
             margin-top: 5px;
+            p:nth-child(2){
+                margin-left: 5px;
+            }
             // margin-top: 20px;
         }
     }
@@ -46,4 +59,14 @@
     margin-left: 150px;
     z-index: 999;
    
+}
+@media screen and (max-width:910px) {
+    .video-card{
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 20px;
+        .description{
+            margin-right: 350px;
+        }
+    }
 }
