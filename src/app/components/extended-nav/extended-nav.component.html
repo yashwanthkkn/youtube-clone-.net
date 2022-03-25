@@ -1,9 +1,9 @@
 <div class="ext-nav-wrap">
-    <div class="header">
-        <div class="menu-icon" (click)="withDraw()" ><i class="fas fa-bars"></i></div>
-        <div class="youtube-logo"><img src="assets/img/yt-logo.svg" class="logo" alt="logo"srcset=""></div>
+    <div class="header" (click)="withDraw()">
+        <div class="menu-icon"  ><i class="fas fa-bars"></i></div>
+        <a class="youtube-logo" routerLink="/home"><img src="assets/img/yt-logo.svg" class="logo" alt="logo"srcset=""></a>
     </div>
-    <div class="flow-nav">
+    <div class="flow-nav" (click)="withDraw()">
         <a class="nav-item" routerLink="/home">
             <div class="nav-icon"><i class="fas fa-home"></i></div>
             <div class="nav-text">Home</div>
