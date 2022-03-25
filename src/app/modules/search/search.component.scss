@@ -1,0 +1,125 @@
+@import url(../../../styles.scss);
+
+@mixin display-column {
+    display: flex;
+    flex-direction: column;
+  }
+  @mixin display-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav{
+      width: 100vw;
+      height: 40vh;
+  }
+
+.main{
+    @include display-column();
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 50px;
+    padding:10px ;
+    width: 93.5vw;
+    font-family:'Roboto', sans-serif;
+    background-color: #F9F9F9;
+}
+.filter{
+    color: #606060;
+    font-weight: 500;
+}
+.h-line { 
+  width: 92.5vw;
+  height: 1px;
+  background: #e5e5e5;
+}
+.vid-elt{
+    @include display-row();
+    
+    margin-top: 10px;
+    height: 33vh;
+    width: 95vw;
+
+}
+.vid-elt:hover{
+    cursor: pointer;
+}
+.thumbnail-img{
+    height: 30vh;
+    width: 25vw;
+     object-fit: contain;
+}
+.caption{
+    @include display-column();
+    justify-content: space-between;
+    margin-top:10px;
+    margin-left: 1px;
+    height: 23vh;
+}
+.title{
+    font-size: 18px;
+}
+.detail{
+    font-size: 13px;
+    color: #606060;
+}
+
+.channel{
+    @include display-row();
+
+    p{
+        margin-top: 5px;
+        margin-left: 3px;
+        font-size: 13px;
+        color: #606060;
+    }
+    .chn-img{
+        border-radius:50%;
+         object-fit: contain;
+         height: 5vh;
+        
+    }
+}
+.channel p:hover{
+    cursor: pointer;
+    color: #2c2c2c;
+}
+
+
+.description{
+    font-size: 13px;
+    color: #606060;
+}
+.pop-up-btn img{
+    height: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    .thumbnail{
+        width: 50%;
+
+    }
+    .caption{
+        width: 50%;
+    }
+    .title{
+        font-size: 15px;
+    }
+    .thumbnail{
+        img{
+            width: 50vw;
+        }
+        
+    }
+    .detail{
+        font-size: 10px;
+    }
+    .channel{
+        .chn-img{
+            height: 20px;
+        }
+    }
+    .description{
+        font-size: 10px;
+    }
+  }
