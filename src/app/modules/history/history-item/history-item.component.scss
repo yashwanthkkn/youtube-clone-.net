@@ -10,7 +10,7 @@
         position: absolute;
         right: 0;
         top: 10px;
-        font-size: 24px;
+        font-size: 16px;
         background-color: $content-background;
         z-index: 100;
         display: none;
@@ -28,12 +28,12 @@
     .history-item-info{
         .history-item-title p{
             margin-top: 8px;
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 400;
             color: $primary;
         }
         p{
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 400;
             color: $secondary;
             margin-bottom: 8px;

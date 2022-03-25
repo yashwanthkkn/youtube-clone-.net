@@ -11,13 +11,13 @@
             padding: 20px 80px 20px 80px;
             .header .title{
                 p{
-                    font-size: 20px;
+                    font-size: 16px;
                     font-weight: bold;
                     color: $primary;
                 }
             }
             .day p{
-                font-size: 20px;
+                font-size: 16px;
                 font-weight: 400;
                 color: $primary;
                 padding: 16px 0;
@@ -31,9 +31,12 @@
             width: 425px;
             background-color: $content-background-secondary;
             height: 100%;
-        }        
-        @media (max-width: 768px){
-            flex-direction: column-reverse;
+        }                
+    }
+    @media (max-width: 768px){
+        padding-left: 0;
+        .watch-history{
+                flex-direction: column-reverse;
             .history-list{
                 width: 100%;
                 padding: 20px;
@@ -43,6 +46,5 @@
                 position: unset;
             }
         }
-        
     }
 }
