@@ -48,7 +48,7 @@
         padding: 20px 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         p{
-            font-size: 18px;
+            font-size: 16px;
             margin-left: 5px;
         }
     }
@@ -59,27 +59,27 @@
         align-items: center;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         label{
-            font-size: 16px;
+            font-size: 14px;
             margin-left: 5px;
             cursor: pointer;
         }
         input{
-            width: 20px;
-            height: 20px;
+            width: 15px;
+            height: 15px;
         }
     }
 }
 .history-actions{
     .history-actions-item{
-        padding: 35px 20px 0 20px;
+        padding: 25px 20px 0 20px;
         p{
-            font-size: 16px;
+            font-size: 14px;
             color: $secondary;
             text-transform: uppercase;
-            font-weight: 500;
+            font-weight: 600;
             i{
                 margin-right: 20px;
-                font-size: 16px;
+                font-size: 14px;
             }
         }
     }

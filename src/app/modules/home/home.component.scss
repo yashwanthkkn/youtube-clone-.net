@@ -12,9 +12,13 @@
         display: flex;
         align-items: center;
         overflow: scroll;
-        overflow-x: hidden;
+        width: calc(100% - 72px);
         overflow-y: hidden;
+        scroll-behavior: smooth;
         border-bottom: $content-background-secondary solid 1px;
+        &::-webkit-scrollbar {
+            display: none;
+        }
         .label-item{
             background-color: $content-background-secondary;
             padding: 0.5rem 1rem;
@@ -22,6 +26,53 @@
             font-size: 14px;
             margin: 0px 5px;
             border: 1px solid #cecece;
+        }
+        .left-arrow{
+            position: fixed;
+            padding: 0.4rem 1rem;
+            margin: 0 0;
+            border-radius: 0;
+            font-size: 20px;
+            background: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            &::after{
+                content: " ";
+                position: absolute;
+                background: linear-gradient(to right,rgba(255, 255, 255, 0.98) 20%,rgba(255,255,255,0) 80%);
+                width: 50px;
+                height: 100%;
+                top: 0;
+                left: 40px;
+            }
+        }
+        .right-arrow{
+            position: fixed;
+            right: 0;
+            padding: 0.4rem 1rem;
+            margin: 0 0;
+            border-radius: 0;
+            font-size: 20px;
+            background: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            &::before{
+                content: " ";
+                position: absolute;
+                background: linear-gradient(to left,rgba(255, 255, 255, 0.98) 20%,rgba(255,255,255,0) 80%);
+                width: 50px;
+                height: 100%;
+                left: -45px;
+                top: 0px;
+            }
+        }
+        .arrow-active{
+            display: block;
+        }
+        @media (max-width: 768px){
+            width: 100%;
         }
     }
     .view-grid{

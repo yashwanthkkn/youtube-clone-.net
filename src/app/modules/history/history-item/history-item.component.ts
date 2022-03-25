@@ -7,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryItemComponent implements OnInit {
 
+  isLoading: boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
   }
 
   formatViews(views: number) {
