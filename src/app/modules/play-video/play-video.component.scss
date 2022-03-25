@@ -1,16 +1,59 @@
 @import "/src/_variables.scss";
+
+
+#horizontal-line {
+    height: 0px;
+    width: 2px;
+    margin-top: -20px;
+    border-bottom: 2px solid red;
+    -webkit-animation: increase 3s;
+    -moz-animation: increase 3s;
+    animation: increase 3s;
+    animation-fill-mode: forwards;
+    float: left;
+    position: fixed;
+    z-index: 1;
+  }
+  
+  @keyframes increase {
+    80% {
+      width: 80%;
+      border-bottom: 2px solid red;
+    }
+    100%{
+        border-bottom: 2px solid red;
+        border: none;
+    }
+  }
+  
+
+
+
+
+
+
+
+.loader{
+    width: 5px;
+    height: 1px;
+    background: red;
+    transition:  transform 2s;
+    transition-delay: 2s;
+    transform: scaleX(200)
+}
+
 .play-video{
-    margin: 100px 56px;
-   
+    margin: 100px 56px 0px 56px;
+    // border-top: 2px solid red;
     display: flex;
     font-weight: normal;
     flex-direction: row;
     font-size: $font-size;
     // flex-wrap: wrap;
     .left-container{
-
+        // border: 1px solid red;
         width: 70%;
-        height: 60%;
+        height: fit-content;
         // border: 1px solid red;
         .image{
             // width: 700px;
@@ -57,6 +100,7 @@
             width: 100%;
             height: 180px;
             margin-top: 20px;
+            color: $secondary;
             // border: 1px solid black;
             border-bottom: 1px solid #c0c0c0;
             .channel-info{
@@ -89,7 +133,7 @@
             }
         
             .channel-text{
-                margin-top: 20px;
+                margin-top: 8px;
                 width: 70%;
                 padding-left: 50px;
                 font-size: 14px;
@@ -168,7 +212,7 @@
 
     }
     .right-container{
-        // border: 1px solid black;
+        // border: 1px solid blue;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -184,8 +228,8 @@
 .comment-section{
     //
     margin: 20px 56px;
-    margin-top: -200px;
-    // border: 1px solid black;
+    margin-top: -350px;
+    // border: 1px solid green;
     width: 60%;
     .top-section{
         display: flex;
@@ -251,7 +295,7 @@
     }
 }
 
-@media screen and (max-width:910px) {
+@media screen and (max-width:980px) {
     .play-video{
         flex-direction: column;
         flex-wrap: wrap-reverse;
@@ -263,9 +307,62 @@
         }
     }
     .comment-section{
-        width: 100%;
+        width: 90%;
+        // border: 1px solid red;
+        padding-top: 25px;
         margin-top: 0px;
+        .comment-input{
+            input{
+                width: 80%;
+            }
+        }
+        
     }
-  
-    
+
+}
+
+@media screen and (max-width:600px) {
+    .play-video{
+        flex-direction: column;
+        margin: 35px 23px;
+        padding-top: 20px;
+        // flex-wrap: wrap-reverse;
+        .left-container{
+            width: 100%;
+            .image{
+                height: 250px;
+            }
+            .video-description{
+                margin-top: 20px;
+            }
+            .views{
+                .likes{
+                    width: 90%;
+                }
+                span{
+                    display: none;
+                }
+            }
+            .channel-details{
+                .channel-text{
+                    width: 100%;
+                    p:nth-child(2){
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+        
+        .right-container{
+            width: 100%;
+        }
+    }
+    .comment-section{
+        width: 95%;
+        margin: 0px 15px;
+        .comment-input{
+            width: 85%;
+        }
+    }
+
 }
