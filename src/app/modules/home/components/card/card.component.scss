@@ -1,11 +1,14 @@
-.card{
+@import '/src/_variables.scss';
+
+.home-card{
     width: 265px;
     height: 300px;
     margin: 10px;
+
     .thumbnail{
         width: inherit;
         height: 150px;
-        background-color: #eee;
+
         .img{
             width: inherit;
             height: inherit;
@@ -18,33 +21,71 @@
     .info{
         display: flex;
         margin-top: 1rem;
+
         .logo{
             width: 25%;   
             text-align: center;
+
             .logo-img{
                 width: 70%;
                 height: 40px;
                 border-radius: 100%;
             } 
         }
-        .desc-wrap{
+
+        .info-wrap{
             color: #606060;
-            .desc{
-                font-size: 14px;
-                font-weight: 600;
-                color: #303030;
+            position: relative;
+            
+            .desc-wrap{
+                display: flex;
+                justify-content: space-between;
+
+                .desc{
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: $primary;                    
+                }
             }
+            
             .channel{
                 font-size: 12px;
                 margin-top: 0.5rem;
             }
+            
             .meta{
                 margin-top: 0.25rem;
                 font-size: 12px;
             }
         }
     }
+    
     @media (max-width: 768px){
         width: 320px;
     }
+}
+
+
+.home-menu-icon i{
+    color: $content-background;
+}
+.home-card:hover {
+    cursor: pointer;
+}
+
+.popup{
+    position:absolute;
+    top: 0;
+    right: 10px;
+    display: none;
+}
+
+.home-card:hover {
+    .home-menu-icon i{
+        color: $primary;
+    }
+}
+
+.home-menu-icon:hover .popup{
+    display: block;
 }
