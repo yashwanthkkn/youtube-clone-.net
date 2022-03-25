@@ -36,3 +36,29 @@ a{
 
 $primary: #030303;
 $secondary: #606060;
+.tooltip {
+    position: relative;
+    display: inline-block;
+    // border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 75px;
+    margin-top: 25px;
+
+    font-size: 12px;
+    background-color: $secondary;
+    color: #fff;
+    text-align: center;
+    
+    padding: 5px 0px;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }

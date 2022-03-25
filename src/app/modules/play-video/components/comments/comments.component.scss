@@ -51,7 +51,7 @@
     .triple-dot{
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 3px;
         margin-top: 10px;
         margin-right: 20px;
         span{
@@ -62,4 +62,32 @@
         }
     }
    
+}
+
+@media screen and (max-width:980px) {
+    .comment{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width : 600px) {
+    .comment{
+        margin-top: 30px;
+        // border: 1px solid black;
+        width: 100%;
+        img{
+            margin-left: 0px;
+        }
+        .comment-text{
+            // margin-left: 0px;
+            font-size: 12px;
+            .actual-comment{
+                width: 90%;
+            }
+            .view-reply{
+                margin-top: 10px;
+            }
+        }
+       
+    }
 }
