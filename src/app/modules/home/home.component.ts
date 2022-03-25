@@ -17,10 +17,9 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    let label = document.getElementById('label-scroll');
+    let label: any = document.getElementById('label-scroll');
     this.labelScrollWidth = label?.scrollWidth;
     this.labelWidth = label?.clientWidth;
-    console.log(this.labelScrollWidth, this.labelWidth);
     if(this.labelScrollWidth < this.labelWidth || this.labelWidth == this.labelScrollWidth ) {
       this.isLabelRightScrollable = false;
       this.isLabelLeftScrollable = false;
@@ -28,7 +27,11 @@ export class HomeComponent implements OnInit {
     else if(this.labelScrollWidth > this.labelWidth) {
       this.isLabelRightScrollable = true;
     }
-    label?.addEventListener('scroll', (e) => {
+    label?.addEventListener('wheel', (e: any) => {
+      e.preventDefault();
+      label.scrollLeft = label?.scrollLeft + e.deltaY;
+    });
+    label?.addEventListener('scroll', (e: any) => {
       if(label?.scrollLeft == 0) {
         this.isLabelLeftScrollable = false;
       }
@@ -36,11 +39,9 @@ export class HomeComponent implements OnInit {
         this.isLabelLeftScrollable = true;
       }
       if(this.labelWidth + label?.scrollLeft === this.labelScrollWidth || this.labelWidth + label?.scrollLeft + 1 > this.labelScrollWidth){
-        console.log(this.labelWidth + label?.scrollLeft, this.labelScrollWidth , true);
         this.isLabelRightScrollable = false;
       }
-      else {
-        console.log(this.labelWidth + label?.scrollLeft, this.labelScrollWidth , false);
+      else {        
         this.isLabelRightScrollable = true;
       }
     });
