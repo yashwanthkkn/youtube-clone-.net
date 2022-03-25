@@ -1,9 +1,8 @@
 <div class="container">
-
     <app-top-nav (extentNavEvent)="extend()"></app-top-nav>
     <app-side-nav (extentNavEvent)="extend()"></app-side-nav>
     <app-extended-nav ></app-extended-nav>
-    <div class="page-container">
+    <div class="page-container" [ngClass]="hasVideoView  ? 'video-view' : 'info-view'">
         <router-outlet></router-outlet>
     </div>
 </div>

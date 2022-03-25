@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 
 @Component({
   selector: 'app-side-nav',
@@ -9,7 +9,16 @@ export class SideNavComponent implements OnInit {
 
   constructor() { }
 
+  showSideNav : boolean = true;
   ngOnInit(): void {
+  }
+
+  hideNav(){
+    this.showSideNav = false;
+  }
+
+  showNav(){
+    this.showSideNav = true;
   }
 
 

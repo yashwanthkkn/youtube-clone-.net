@@ -6,8 +6,15 @@
 
 .page-container{
     margin-top: 56px;
-    margin-left: 72px;
     @media (max-width: 768px){
         margin-left: 0px;
     }
+}
+
+.video-view{
+    margin-left: 0px;
+}
+
+.info-view{
+    margin-left: 72px;
 }
