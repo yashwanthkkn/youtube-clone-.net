@@ -1,0 +1,95 @@
+@import '/src/_variables.scss';
+
+.history-item{
+    display: flex;
+    padding: 10px 0;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+    .icons{
+        position: absolute;
+        right: 0;
+        top: 10px;
+        font-size: 16px;
+        background-color: $content-background;
+        z-index: 100;
+        display: none;
+        i{
+            margin-right: 40px;
+            cursor: pointer;
+            color: $primary;
+        }
+    }
+    &:hover{
+        .icons{
+            display: block;
+        }
+    }
+    .history-item-info{
+        .history-item-title p{
+            margin-top: 8px;
+            font-size: 18px;
+            font-weight: 400;
+            color: $primary;
+        }
+        p{
+            font-size: 14px;
+            font-weight: 400;
+            color: $secondary;
+            margin-bottom: 8px;
+        }
+        .history-item-author-views{
+            display: flex;
+            .history-item-views,.seperator{
+                margin-left: 5px;
+            }
+        }
+        .history-item-description{
+            p{
+                max-height: 40px;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;                                  
+            }
+        }
+    }
+    @media (max-width: 768px){
+        .history-item-description{
+            display: none;            
+        }
+        .history-item-info{
+            .history-item-author-views{            
+                flex-direction: column;
+                .seperator{
+                    display: none;
+                }
+                .history-item-views{
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+.history-item.is-loading{
+    .history-item-thumbnail,.history-item-info{
+        background: #eee;
+        background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+        border-radius: 5px;
+        background-size: 200% 100%;
+        animation: 1.5s shine linear infinite;
+    } 
+    .history-item-thumbnail{
+        width: 420px;
+        height: 138px;
+    }
+    .history-item-info{
+        height: 110px;
+        width: 100%;
+    }   
+    @keyframes shine {
+        to {
+            background-position-x: -200%;
+        }
+    }   
+}

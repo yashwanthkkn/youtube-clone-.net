@@ -1,0 +1,37 @@
+@import "/src/_variables.scss";
+
+.home-popup-wrap{
+    height: 250px;
+    width: 270px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    color: $primary;
+
+    .nav-item{
+        padding: 0.25rem 0.75rem;
+        display: flex;
+        align-items: center;
+
+        .nav-icon{
+            width: 20%;
+            font-size: 20px;
+            text-align: center;
+            opacity: 75%;
+        }
+
+        .nav-text{
+            margin-left: 1rem;
+            font-size: 14px;
+        }
+    }
+
+    .nav-item:hover{
+        background-color: $content-background-secondary;
+    }
+
+    .line{
+        margin: 5px 0px;
+        border-bottom: 1px solid $content-background-secondary;
+    }
+}

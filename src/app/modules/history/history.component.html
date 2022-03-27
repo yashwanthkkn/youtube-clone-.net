@@ -1,1 +1,20 @@
-<p>history works!</p>
+<div class="history">
+    <div class="watch-history">
+        <div class="history-list">
+            <div class="header">
+                <div class="title">
+                    <p>Watch History</p>
+                </div>
+            </div>
+            <div class="day">
+                <p>Today</p>
+            </div>
+            <div class="history-items">
+                <app-history-item *ngFor="let i of [0,0,0,0,0,0,0,0]"></app-history-item>
+            </div>
+        </div>
+        <div class="history-filters">
+            <app-history-filter></app-history-filter>
+        </div>
+    </div>
+</div>

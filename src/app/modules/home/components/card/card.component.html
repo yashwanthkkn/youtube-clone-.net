@@ -1,0 +1,36 @@
+<div class="home-card" *ngIf="!isLoading; else loading" >
+    <div class="thumbnail">
+        <img src="assets/img/thumbnail1.jpg" alt="img" class="img">
+    </div>
+    <div class="info">
+        <div class="logo">
+            <img src="assets/img/thumbnail1.jpg" class="logo-img" alt="">
+        </div>
+        <div class="info-wrap">
+            <div class="desc-wrap">
+                <div class="desc">Wealth Gap: Last week Tonight with John Oliver</div>
+                <div class="home-menu-icon">
+                    <i class="fas fa-ellipsis-v"></i>
+                    <div class="popup">
+                        <!-- POP-UP -->
+                        <app-home-popup ></app-home-popup>
+                    </div>
+                </div>
+            </div>
+            <div class="channel">Hindhustan Times</div>
+            <div class="meta">74K views . 2 hours ago</div>
+        </div>
+    </div>
+</div>
+<ng-template #loading>
+    <div class="home-card is-loading">
+        <div class="thumbnail">
+        </div>
+        <div class="info">
+            <div class="logo">
+            </div>
+            <div class="desc-wrap">
+            </div>
+        </div>
+    </div>
+</ng-template>

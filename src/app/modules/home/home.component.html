@@ -1,1 +1,37 @@
-<p>home works!</p>
+<div class="home-wrap">
+    <div id="label-scroll" class="labels">
+        <div [ngClass]="isLabelLeftScrollable ? 'arrow-active' : ''" class="label-item left-arrow" (click)="scroll('left')"><i class="fas fa-angle-left"></i></div>
+        <div class="label-item">Lofi</div>
+        <div class="label-item">Podcast</div>
+        <div class="label-item">Anime</div>
+        <div class="label-item">Sitcoms</div>
+        <div class="label-item">Music</div>
+        <div class="label-item">Debates</div>
+        <div class="label-item">University</div>
+      
+        <div class="label-item">Lofi</div>
+        <div class="label-item">Podcast</div>
+        <div class="label-item">Anime</div>
+        <div class="label-item">Sitcoms</div>
+        <div class="label-item">Music</div>
+        <div class="label-item">Debates</div>
+        <div class="label-item">University</div>
+        <div class="label-item">University</div>
+        <div class="label-item">University</div>
+        <div class="label-item">University</div>
+        <div [ngClass]="isLabelRightScrollable ? 'arrow-active' : ''" class="label-item right-arrow" (click)="scroll('right')"><i class="fas fa-angle-right"></i></div>
+    </div>
+
+    <div class="view-grid">
+        <home-card></home-card>
+        <home-card></home-card>
+        <home-card></home-card>
+        <home-card></home-card>
+        <home-card></home-card>
+        <home-card></home-card>
+        <home-card></home-card>
+        <home-card></home-card>
+        <home-card></home-card>
+        <home-card></home-card>
+    </div>
+</div>

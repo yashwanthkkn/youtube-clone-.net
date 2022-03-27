@@ -1,0 +1,85 @@
+@import url(../../search.component.scss);
+@mixin display-column {
+    display: flex;
+    flex-direction: column;
+  }
+  @mixin display-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+.vid-elt{
+    @include display-row();
+    margin-top: 10px;
+    margin-bottom: -2px;
+    height: 33vh;
+    width: 85vw;
+}
+.vid-elt:hover{
+    cursor: pointer;
+}
+.thumbnail{
+     position: relative;
+    .bottom-right {
+        position: absolute;
+        bottom: 23px;
+        right: 8px;
+        color: white;
+        background-color: #1d1c1c42;
+        font-size: 13px;
+        background: fixed;
+      }
+      
+      .thumbnail-img{
+          
+        height: 30vh;
+        width: 25vw;
+        
+    }
+    
+    }
+
+
+.caption{
+    @include display-column();
+    justify-content: space-between;
+    margin-top:10px;
+    margin-left: 15px;
+    height: 23vh;
+}
+.title{
+    font-size: 18px;
+}
+.detail{
+    font-size: 13px;
+    color: #606060;
+}
+
+.channel{
+    @include display-row();
+
+    p{
+        margin-top: 5px;
+        margin-left: 10px;
+        font-size: 13px;
+        color: #606060;
+    }
+    .chn-img{
+        border-radius:50%;
+         object-fit: contain;
+         height: 5vh;
+        
+    }
+}
+.channel p:hover{
+    cursor: pointer;
+    color: #2c2c2c;
+}
+
+.description{
+    font-size: 13px;
+    color: #606060;
+}
+.pop-up-btn img{
+    height: 30px;
+}

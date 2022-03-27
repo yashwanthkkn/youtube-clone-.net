@@ -1,0 +1,114 @@
+@import '/src/_variables.scss';
+
+.home-card{
+    width: 265px;
+    height: 300px;
+    margin: 10px;
+
+    .thumbnail{
+        width: inherit;
+        height: 150px;
+
+        .img{
+            width: inherit;
+            height: inherit;
+        }
+        @media (max-width: 768px){
+            height: 180px;
+        }
+    }
+    .info{
+        display: flex;
+        margin-top: 1rem;
+
+        .logo{
+            width: 25%;   
+            text-align: center;
+
+            .logo-img{
+                width: 70%;
+                height: 40px;
+                border-radius: 100%;
+            } 
+        }
+
+        .info-wrap{
+            color: #606060;
+            position: relative;
+            
+            .desc-wrap{
+                display: flex;
+                justify-content: space-between;
+
+                .desc{
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: $primary;                    
+                }
+            }
+            
+            .channel{
+                font-size: 12px;
+                margin-top: 0.5rem;
+            }
+            
+            .meta{
+                margin-top: 0.25rem;
+                font-size: 12px;
+            }
+        }
+    }
+    
+    @media (max-width: 768px){
+        width: 320px;
+    }
+}
+
+
+.home-menu-icon i{
+    color: $content-background;
+}
+.home-card:hover {
+    cursor: pointer;
+}
+
+.popup{
+    position:absolute;
+    top: 0;
+    right: 10px;
+    display: none;
+}
+
+.home-card:hover {
+    .home-menu-icon i{
+        color: $primary;
+    }
+}
+
+.home-menu-icon:hover .popup{
+    display: block;
+}
+.home-card.is-loading{
+    .thumbnail,.desc-wrap,.logo{
+        background: #eee;
+        background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+        border-radius: 5px;
+        background-size: 200% 100%;
+        animation: 1.5s shine linear infinite;
+    } 
+    .logo{
+        width: 20% !important;
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 45%;
+    }
+    .desc-wrap{
+        height: 50px;
+        width: 100%;
+    }   
+    @keyframes shine {
+        to {
+            background-position-x: -200%;
+        }
+    }   
+}
