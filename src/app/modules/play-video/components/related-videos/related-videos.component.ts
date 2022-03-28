@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-related-videos',
@@ -9,6 +9,8 @@ export class RelatedVideosComponent implements OnInit {
 
   constructor() { }
 
+  // @Output() closePopUp = new EventEmitter<boolean>();
+ 
   isTripleDotClicked:boolean = false;
 
   ngOnInit(): void {
@@ -16,6 +18,16 @@ export class RelatedVideosComponent implements OnInit {
 
   onTrippleDotClick(){
     this.isTripleDotClicked = !this.isTripleDotClicked;
+  }
+  onhoverTrippleDot(){
+    this.isTripleDotClicked = true
+  }
+  onLeaveTrippleDot(){
+    this.isTripleDotClicked = false
+  }
+  closePopup(){
+    this.isTripleDotClicked = false
+    console.log("clicked....")
   }
 
 }

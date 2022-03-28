@@ -1,25 +1,23 @@
 @import "/src/_variables";
+
+.side-video{
+    position: relative;
+    
+}
 .video-card{
     display: flex;
     justify-content: space-around;
     width: 350px;
-
-    position: relative;
     font-size: $font-size;
-    // border: 1px solid black;
-
-    // margin-left: 20px;
-    // border: 1px solid black;
+   
     img{
         width: 200px;
         height: 100px;
-        // border: 1px solid black;
-
     }
     .description{
         display: flex;
         flex-direction: column;
-        // border: 1px solid black;
+       
         width: 500px;
         margin-left: 10px;
         .title{
@@ -41,15 +39,25 @@
             p:nth-child(2){
                 margin-left: 5px;
             }
-            // margin-top: 20px;
+         
         }
     }
-
+    .popup-display{
+        position: absolute;
+        top:0px;
+        right: 0;
+        z-index: 999;
+        display: none;
+       
+    }
     .triple-dot{
         display: flex;
         flex-direction: column;
         gap: 3px;
-        // border: 1px solid black;
+        
+        height: fit-content;
+        width: 50px;
+       
         span{
             width: 3px;
             height: 3px;
@@ -57,17 +65,12 @@
             border-radius: 100px;
         }
     }
-    .triple-dot:hover{
+    .triple-dot:hover .popup-display{
         cursor: pointer;
+        display: block;
     }
 }
-.popup-display{
-    position: absolute;
-    top:20px;
-    margin-left: 150px;
-    z-index: 999;
-   
-}
+
 @media screen and (max-width:980px) {
     .video-card{
         width: 100%;

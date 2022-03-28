@@ -1,6 +1,6 @@
-<div class="side-video">
+<div class="side-video" >
     
-<div class="video-card">
+<div class="video-card" >   
     <img src="/assets/img/image.jpg" alt="">
     <div class="description">
         <p class="title">Git & GitHub Tutorial</p>
@@ -10,12 +10,16 @@
             <p>4 years ago</p>
         </div>
     </div>
-    <div class="triple-dot" (click)="onTrippleDotClick()">
+    <div class="triple-dot">
+        <!-- (click)="onTrippleDotClick()" (mouseenter)="onhoverTrippleDot()" (mouseleave)="onLeaveTrippleDot()" -->
+        <!-- *ngIf="isTripleDotClicked" -->
         <span></span><span></span><span></span>
+        <div class="popup-display" >
+            <app-popup></app-popup>
+        </div>
     </div>
-    <div class="popup-display" *ngIf="isTripleDotClicked">
-        <app-popup></app-popup>
-    </div>
+  
+    
 
 </div>
 </div>
