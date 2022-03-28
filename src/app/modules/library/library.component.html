@@ -1,1 +1,60 @@
-<p>library works!</p>
+<div class="library-container">
+    <div class="left-container">
+        <div class="history">
+            <!-- <div class="history-top">
+                <i class="fa fa-clock-o" aria-hidden="true"> <span>History</span></i>
+                <a routerLink="/history">SEE ALL</a>
+            </div> -->
+            <app-library-header [header]="libraryTop[0]"></app-library-header>
+            <div class="history-card" >
+                <div *ngFor="let i of history">
+                    <app-library-card></app-library-card>
+                </div>
+                
+            </div>
+           
+        </div>
+        <div class="watch-later">
+            <app-library-header [header]="libraryTop[1]"></app-library-header>
+            <div class="history-card">
+                <div *ngFor="let i of watchLater">
+                    <app-library-card></app-library-card>
+                </div>
+            </div>
+        </div>
+
+        <div class="playlist">
+            <app-library-header [header]="libraryTop[2]"></app-library-header>
+            <div class="history-card">
+                <div *ngFor="let i of playList">
+                    <app-library-card></app-library-card>
+                </div>
+            </div>
+        </div>
+
+        <div class="liked-video">
+            <app-library-header [header]="libraryTop[3]"></app-library-header>
+            <div class="history-card">
+                <div *ngFor="let i of likedVideo">
+                    <app-library-card></app-library-card>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-container">
+        <div class="library-right">
+           <p>Subscriptions</p> 
+           <p>5</p>
+        </div>
+        <div class="library-right">
+           <p>Uploads</p> 
+           <p>0</p>
+        </div>
+        <div class="library-right">
+           <p>Likes</p>    
+           <p>10</p>        
+        </div>
+    </div>
+</div>
+
+
