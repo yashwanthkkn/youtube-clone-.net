@@ -16,6 +16,7 @@
         overflow-y: hidden;
         scroll-behavior: smooth;
         border-bottom: $content-background-secondary solid 1px;
+        z-index: 100;
         &::-webkit-scrollbar {
             display: none;
         }
