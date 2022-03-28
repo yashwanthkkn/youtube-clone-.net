@@ -5,6 +5,7 @@ import { HistoryRoutingModule } from './history-routing.module';
 import { HistoryComponent } from './history.component';
 import { HistoryItemComponent } from './history-item/history-item.component';
 import { HistoryFilterComponent } from './history-filter/history-filter.component';
+import { MenuDropdownComponent } from './menu-dropdown/menu-dropdown.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { HistoryFilterComponent } from './history-filter/history-filter.componen
     HistoryComponent,
     HistoryItemComponent,
     HistoryFilterComponent,
+    MenuDropdownComponent,
   ],
   imports: [
     CommonModule,

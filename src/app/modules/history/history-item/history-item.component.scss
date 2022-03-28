@@ -19,10 +19,22 @@
             cursor: pointer;
             color: $primary;
         }
+        .dropdown-menu{
+            margin-right: 0;
+        }
+        .dropdown-container:hover .dropdown{
+            display: block;
+        }
+        .dropdown{
+            position:absolute;
+            top: 0;
+            right: 0px;
+            display: none;
+        }
     }
     &:hover{
         .icons{
-            display: block;
+            display: flex;
         }
     }
     .history-item-info{
@@ -55,10 +67,28 @@
         }
     }
     @media (max-width: 768px){
+        &:hover{
+            .icons{
+                display: none;
+            }
+        }
+        .history-item-thumbnail{
+            width: 60%;
+            img{
+                width: 100%;
+            }
+        }
         .history-item-description{
             display: none;            
         }
         .history-item-info{
+
+            .history-item-title p{
+                font-size: 16px;
+            }
+            p{
+                font-size: 12px;
+            }
             .history-item-author-views{            
                 flex-direction: column;
                 .seperator{
