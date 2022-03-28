@@ -23,15 +23,6 @@
     </div>
 
     <div class="view-grid">
-        <home-card></home-card>
-        <home-card></home-card>
-        <home-card></home-card>
-        <home-card></home-card>
-        <home-card></home-card>
-        <home-card></home-card>
-        <home-card></home-card>
-        <home-card></home-card>
-        <home-card></home-card>
-        <home-card></home-card>
+        <home-card *ngFor="let cardData of videos" [cardData]="cardData"></home-card>
     </div>
 </div>

@@ -16,7 +16,7 @@ import { ExtendedNavComponent } from './components/extended-nav/extended-nav.com
     SideNavComponent,
     FloatNavComponent,
     LoginComponent,
-    ExtendedNavComponent
+    ExtendedNavComponent,
   ],
   imports: [
     BrowserModule,

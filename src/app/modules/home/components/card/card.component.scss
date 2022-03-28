@@ -35,15 +35,16 @@
         .info-wrap{
             color: #606060;
             position: relative;
-            
+            width: 100%;
             .desc-wrap{
                 display: flex;
                 justify-content: space-between;
-
+                width: 100%;
                 .desc{
                     font-size: 14px;
                     font-weight: 600;
-                    color: $primary;                    
+                    color: $primary;
+                    min-height: 35px;                    
                 }
             }
             
