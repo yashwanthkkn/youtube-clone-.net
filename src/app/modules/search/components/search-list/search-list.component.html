@@ -27,5 +27,12 @@
         nobis accusantium quia dolorem suscipit sapiente perspiciatis quas...
       </div>
     </div>
-    <div class="pop-up-btn"><img src="https://charbase.com/images/glyph/10998" alt=""></div>
+    <div class="pop-up-btn" (click)="toggleMenu()"><img src="https://charbase.com/images/glyph/10998" alt="">
+      <div class="pop-up-menu" *ngIf="showMenu === true">
+        <app-popup></app-popup>
+      </div> 
+    </div>
+    <!-- <div class="pop-up-menu">
+      <app-popup></app-popup>
+    </div> -->
   </div>

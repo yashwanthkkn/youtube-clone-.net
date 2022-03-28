@@ -1,4 +1,4 @@
-@import url(../../../styles.scss);
+
 
 @mixin display-column {
     display: flex;
@@ -21,18 +21,86 @@
     padding:10px 50px 10px 50px;
     width: 100%;
     font-family:'Roboto', sans-serif;
-    background-color: #F9F9F9;
+    background-color:#f9f9f9;
     @media screen and (max-width: 768px){
         padding: 15px;
     }
 }
 .filter{
+    @include display-row();
+    
+    text-decoration: none;
     color: #606060;
-    font-weight: 500;
+    font-weight: 700;
+    padding: 5px;
+    font-size: 15px;
+    img{
+        width: 3vw;
+        height: 3vh;
+        object-fit: contain;
+    }
 
 }
 .filter:hover{
     cursor: pointer;
+    color: black;
+}
+.filter-container-close{
+    height:0vh;
+    display: none;
+
+}
+.filter-container-open{
+    @include display-row();
+    
+    justify-content: space-between;
+    margin-top: 17px;
+    font-size: 12.5px;
+    font-weight: 600;
+    animation: myAnim 0.3s ease-out forwards;
+    height: 70vh;
+    @keyframes myAnim {
+        0% {
+          height: 0vh;
+        }
+        20%{
+            height: 14vh;
+        }
+        40%{
+            height: 28vh;
+        }
+        
+        100% {
+          height: 70vh;
+        }
+      }
+    .filter-container .isClosed {
+        display: none;
+      }
+    
+    .filter-component{
+        @include display-column();
+        width: 20%;
+        margin:10px;
+    }
+    li{
+        padding-top: 20px;
+        font-size: 13px;
+        color: #606060;
+        font-weight: 400;
+    }
+    li:hover{
+        cursor: pointer;
+    }
+}
+ul{
+    list-style-type: none;
+}
+.underline{
+  width: 70%;
+  height: 1px;
+  background: #e5e5e5;
+  margin: 15px 0px;
 }
 .h-line { 
   width: 100%;
