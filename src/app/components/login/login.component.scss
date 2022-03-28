@@ -1,0 +1,118 @@
+.image-el {
+  padding-top: 18px;
+  margin-left: 35%;
+  width: 80px;
+}
+.input {
+  width: 280px;
+  height: 50px;
+  margin-top: 28px;
+  border: 1px solid grey;
+  border-radius: 8px;
+}
+#desc {
+  color: grey;
+  margin-top: 0px;
+  padding-top: 30px;
+  padding-bottom: 5px;
+}
+.blue {
+  color: #2424ff;
+  font-weight: 527;
+  cursor: pointer;
+}
+.align-head {
+  text-align: center;
+  font-weight: 500;
+  color: black;
+  padding-top: 8px;
+}
+#header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -62%);
+  width: 380px;
+  font-size: 14px;
+  height: 450px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  margin-top: 35px;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 51px;
+  border-radius: 10px;
+}
+#drop-down {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 1280%);
+  display: inline-flex;
+  justify-content: space-around;
+  font-size: small;
+  width: 450px;
+}
+select#lang {
+  border: none;
+}
+.span {
+  padding-left: 6px;
+  font-size: small;
+  color: #808080;
+}
+.next-el {
+  display: flex;
+  padding-top: 26px;
+}
+#next-btn {
+  width: 28%;
+  height: 40px;
+  padding-top: 0%;
+  background-color: #2424ff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  margin-left: 72px;
+}
+@media screen and (min-width: 275px) and (max-width: 600px) {
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: small;
+  }
+  #header {
+    position: absolute;
+    top: 60%;
+    left: 65%;
+    transform: translate(-60%, -88%);
+    height: 500px;
+    border: none;
+    width: 350px;
+    margin: 0px;
+    padding-left: 2px;
+  }
+  .input {
+    width: 350px;
+    height: 55px;
+    margin-top: 20px;
+    border: 1px solid grey;
+    border-radius: 8px;
+  }
+  .next-el {
+    display: flex;
+    padding-top: 26px;
+  }
+  #next-btn {
+    width: 30%;
+    height: 50px;
+    margin-left: 75px;
+  }
+  #drop-down {
+    transform: translate(-50%, 2400%);
+    justify-content: space-around;
+  }
+  .span {
+    font-size: small;
+  }
+}
