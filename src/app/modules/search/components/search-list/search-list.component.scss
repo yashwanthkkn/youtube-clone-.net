@@ -15,11 +15,18 @@
     height: 33vh;
     width: 85vw;
     position: relative;
-    &:hover{
         .pop-up-btn{
-            display: block;        
+            display: block; 
+             
+            img{
+                margin-left: 250px;
+            }
+            .pop-up-menu{
+                margin-left: 35px;
+            }
         }
-    } 
+        
+    
     @media screen and (max-width: 768px){
        height: 100%;
        width: 100%;

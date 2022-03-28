@@ -11,5 +11,14 @@ export class SearchListComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  showMenu = false;
 
+  toggleMenu(){
+    if(this.showMenu==false){
+      this.showMenu = true;
+    }
+    else{
+      this.showMenu = false;
+    }
+  }
 }

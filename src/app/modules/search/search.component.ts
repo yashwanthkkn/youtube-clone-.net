@@ -13,6 +13,8 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
   toggleDiv(){
+    console.log(this.showDiv);
+    
     if(this.showDiv === true){
       this.showDiv = false;
     }
