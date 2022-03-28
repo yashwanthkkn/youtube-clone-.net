@@ -22,6 +22,9 @@
     width: 100%;
     font-family:'Roboto', sans-serif;
     background-color: #F9F9F9;
+    @media screen and (max-width: 768px){
+        padding: 15px;
+    }
 }
 .filter{
     color: #606060;
