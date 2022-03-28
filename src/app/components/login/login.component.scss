@@ -18,6 +18,7 @@
   margin-top: 28px;
   border: 1px solid grey;
   border-radius: 8px;
+  padding-left: 1rem;
 }
 #desc {
   color: grey;
@@ -29,6 +30,7 @@
   color: #2424ff;
   font-weight: 527;
   cursor: pointer;
+  margin-top: 0.5rem;
 }
 .align-head {
   text-align: center;
@@ -83,6 +85,7 @@ select#lang {
   border-radius: 4px;
   color: white;
   margin-left: 72px;
+  cursor: pointer;
 }
 @media screen and (min-width: 275px) and (max-width: 600px) {
   body {
