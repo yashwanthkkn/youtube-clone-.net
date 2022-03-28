@@ -23,13 +23,13 @@
             margin-right: 0;
         }
         .dropdown-container:hover .dropdown{
-            display: block;
+            visibility: visible;
         }
         .dropdown{
             position:absolute;
             top: 0;
             right: 0px;
-            display: none;
+            visibility: hidden;
         }
     }
     &:hover{
@@ -122,4 +122,13 @@
             background-position-x: -200%;
         }
     }   
+}
+
+.tooltip{
+    .tooltiptext{
+        width: 180px;
+        border-radius: 5px;
+        margin-top: 10px;
+        left: -50px;
+    }
 }
