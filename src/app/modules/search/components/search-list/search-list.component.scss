@@ -14,6 +14,11 @@
     margin-bottom: -2px;
     height: 33vh;
     width: 85vw;
+    &:hover{
+        .pop-up-btn{
+            display: block;        
+        }
+    } 
 }
 .vid-elt:hover{
     cursor: pointer;
@@ -80,6 +85,9 @@
     font-size: 13px;
     color: #606060;
 }
-.pop-up-btn img{
-    height: 30px;
-}
+.pop-up-btn{
+    display: none;
+    img{
+        height: 30px;
+    }
+} 
