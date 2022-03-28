@@ -9,25 +9,27 @@ export class OauthService {
 
   GoogleAuth:any = undefined; 
   isAuthenticated : boolean = false;
-  constructor() { 
-    this.initGoogleAuth();
-  }
+  
+  constructor() { }
 
-  initGoogleAuth(){
-    gapi.load('client',()=>{
-      let access_token = sessionStorage.getItem('accessToken')
-      if(access_token !== null){
-        this.isAuthenticated = true
-        gapi.client.setToken({access_token})
-      }      
-      gapi.client.init({
-        'apiKey': environment.GAPI_API_KEY,
-        'clientId': environment.GAPI_CLIENT_ID,
-        'scope': 'https://www.googleapis.com/auth/youtube.force-ssl',
-        'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest']
-      }).then(()=> {
-          this.GoogleAuth = gapi.auth2.getAuthInstance();
-      });
+  loadClient(){
+    return new Promise((resolve,reject)=>{
+      gapi.load('client',()=>{
+        let access_token = sessionStorage.getItem('accessToken')
+        if(access_token !== null){
+          this.isAuthenticated = true
+          gapi.client.setToken({access_token})
+        }      
+        gapi.client.init({
+          'apiKey': environment.GAPI_API_KEY,
+          'clientId': environment.GAPI_CLIENT_ID,
+          'scope': 'https://www.googleapis.com/auth/youtube.force-ssl',
+          'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest']
+        }).then(()=> {
+            this.GoogleAuth = gapi.auth2.getAuthInstance(); 
+            resolve('loaded')
+        });
+      })
     })
   }
 

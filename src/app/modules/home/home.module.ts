@@ -5,17 +5,19 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { CardComponent } from './components/card/card.component';
 import { HomePopupComponent } from './components/home-popup/home-popup.component';
+import { DateAgoPipe } from 'src/app/pipes/date-ago.pipe';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     CardComponent,
-    HomePopupComponent
+    HomePopupComponent,
+    DateAgoPipe
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
   ]
 })
 export class HomeModule { }

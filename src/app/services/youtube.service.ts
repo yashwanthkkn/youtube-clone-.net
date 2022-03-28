@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { OauthService } from './oauth.service';
+
 declare var gapi: any;
 
 @Injectable({
@@ -8,28 +8,35 @@ declare var gapi: any;
 })
 export class YoutubeService {
   
-  constructor(private authService : OauthService) {   }
+  constructor(private authService : OauthService) { }
 
-  getRandomVideos(){
-    let params = {
-      part : 'snippet,contentDetails',
-      mine : false,
-      maxResults:'5',
-      chart:'mostPopular',
-      q:'random'
+
+  async getVideos(searchKey:string = 'random',maxResults:number = 10){
+    console.log(searchKey);
+    
+    if( ! gapi.client ){
+      await this.authService.loadClient();
     }
+    let videos: never[] = [];
+    let params = {
+      part : 'snippet',
+      mine : false,
+      maxResults:maxResults,
+      chart:'mostPopular',
+      q:searchKey
+    }
+
     if(this.authService.isAuthenticated)
       params.mine = true;
-    var request = gapi.client.request({
+    
+    let response = await gapi.client.request({
       'method': 'GET',
-      // 'path': '/youtube/v3/subscriptions',
-      'path': '/youtube/v3/videos',
+      'path': '/youtube/v3/search',
       'params': params,
       
     });
-
-    request.execute((response:any)=> {
-      console.log(response);
-    });
+    
+    videos = response.result.items
+    return videos
   }
 }

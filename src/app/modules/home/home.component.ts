@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {YoutubeService} from 'src/app/services/youtube.service'
 
 @Component({
   selector: 'app-home',
@@ -14,9 +15,22 @@ export class HomeComponent implements OnInit {
   labelScrollWidth: any;
   labelWidth: any;
 
-  constructor() { }
+  videos = []
+  
+  constructor(private api : YoutubeService) { 
+    
+  }
+
 
   ngOnInit(): void {
+
+    (async()=>{
+      // loading the cards
+      this.videos = await this.api.getVideos('firebase',10); 
+      console.log(this.videos);
+      
+    })()
+
     let label: any = document.getElementById('label-scroll');
     this.labelScrollWidth = label?.scrollWidth;
     this.labelWidth = label?.clientWidth;
