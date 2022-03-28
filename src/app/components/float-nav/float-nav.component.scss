@@ -1,0 +1,76 @@
+.flow-nav{
+    height: 100%;
+    width: 300px;
+    border: 1px solid #f1f1f1;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+   
+    
+  
+}
+    
+    .google-item
+    {
+        display: flex;
+        flex-direction: row;
+        padding: 15px;
+     
+    }
+    .details
+    {
+        text-align: left;
+    }
+    .acc-icon
+    {
+        margin-right: 20px;
+    }
+    
+    .google-acc-name
+    {
+       font-weight: bold;
+       font-size: 17px;
+    }
+    .manage-acc
+    {
+        color: blue;
+        margin-top: 5px;
+        font-size: medium;
+    }
+
+    .nav-item{
+        display: flex;
+        width: 100%;
+        padding: 0.65rem 0rem;
+        padding-left: 26px;
+    }
+    .nav-item-mode{
+        display: flex;
+        width: 100%;
+        padding: 0.75rem 0rem;
+        
+    }
+        .nav-icon{
+            font-size: 18px;
+        }
+        .nav-text{
+            padding-left: 26px;
+            font-size: 15px;
+            color: #606060;
+        }
+        .line{
+            border-bottom: 1px solid #f1f1f1;
+            margin: 5px 0px;
+        }
+        
+        .nav-item:hover{
+            cursor: pointer;
+            background-color:#f1f1f1;
+        }
+        .menu-channel-icon
+        {
+            border-style: hidden;
+            background-color: white;
+            font-size: xx-large;
+        }
+        
