@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { SearchRoutingModule } from './search-routing.module';
 import { SearchComponent } from './search.component';
+import { SearchListComponent } from './components/search-list/search-list.component';
 
 
 @NgModule({
   declarations: [
-    SearchComponent
+    SearchComponent,
+    SearchListComponent
   ],
   imports: [
     CommonModule,
