@@ -6,6 +6,7 @@ import { PlayVideoComponent } from './play-video.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { RelatedVideosComponent } from './components/related-videos/related-videos.component';
 import { PopupComponent } from './components/popup/popup.component';
+import { TagsComponent } from './components/tags/tags.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { PopupComponent } from './components/popup/popup.component';
     PlayVideoComponent,
     CommentsComponent,
     RelatedVideosComponent,
-    PopupComponent
+    PopupComponent,
+    TagsComponent
   ],
   imports: [
     CommonModule,
