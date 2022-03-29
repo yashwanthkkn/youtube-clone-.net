@@ -3,6 +3,7 @@
 .history-item{
     display: flex;
     padding: 10px 0;
+    font-size: 14px;
     gap: 10px;
     cursor: pointer;
     position: relative;
@@ -62,7 +63,8 @@
                 overflow: hidden;
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;                                  
+                -webkit-box-orient: vertical;  
+                width: 280px;                                
             }
         }
     }
@@ -73,16 +75,17 @@
             }
         }
         .history-item-thumbnail{
-            width: 60%;
+            width: 50%;
             img{
                 width: 100%;
             }
         }
+      
         .history-item-description{
             display: none;            
         }
         .history-item-info{
-
+            width: 50%;
             .history-item-title p{
                 font-size: 16px;
             }
