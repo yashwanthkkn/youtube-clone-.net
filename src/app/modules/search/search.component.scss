@@ -1,5 +1,3 @@
-
-
 @mixin display-column {
     display: flex;
     flex-direction: column;
@@ -45,36 +43,16 @@
     cursor: pointer;
     color: black;
 }
-.filter-container-close{
-    height:0vh;
-    display: none;
-}
-.filter-container-open{
+.filter-container{
     @include display-row();
     
     justify-content: space-between;
     margin-top: 17px;
     font-size: 12.5px;
     font-weight: 600;
-    animation: myAnim 0.25s ease-out forwards;
-    height: 70vh;
-    @keyframes myAnim {
-        0% {
-          height: 0vh;
-        }
-        20%{
-            height: 14vh;
-        }
-        40%{
-            height: 28vh;
-        }
-        
-        100% {
-          height: 70vh;
-        }
-      }
-    
-    
+    transition: max-height 0.5s;
+    overflow: hidden;
+    max-height: 0;
     .filter-component{
         @include display-column();
         width: 20%;
@@ -89,6 +67,11 @@
     li:hover{
         cursor: pointer;
     }
+}
+.filter-container.isOpen{
+    max-height: 100vh;
+    overflow: hidden;
+    transition: max-height 0.5s;
 }
 ul{
     list-style-type: none;

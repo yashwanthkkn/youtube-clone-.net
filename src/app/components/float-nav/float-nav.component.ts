@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { OauthService } from 'src/app/services/oauth.service';
 
 @Component({
   selector: 'app-float-nav',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FloatNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: OauthService, private router : Router) { }
 
   ngOnInit(): void {
+  }
+
+  signOut(){
+    this.authService.signOut()
+      .then(()=>{
+        this.router.navigate(['/home'])
+      })
   }
 
 }

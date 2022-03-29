@@ -1,18 +1,18 @@
-<div class="vid-elt">
+<div class="vid-elt" routerLink="/playVideo/{{cardData?.id.videoId}}">
     <div class="thumbnail">
       <img
         class="thumbnail-img"
-        src="https://images.unsplash.com/photo-1647471922959-e5515db63a28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE3fENEd3V3WEpBYkV3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+        src="{{cardData?.snippet.thumbnails.medium.url}}"
         alt=""
       />
       <div class="bottom-right">33:33</div>
     </div>
     <div class="caption">
       <div class="title">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>{{cardData?.snippet.title}}</p>
       </div>
       <div class="detail">
-        <p>211K views . 7 months ago</p>
+        <p>211K views . {{cardData?.snippet.publishedAt}}</p>
       </div>
       <div class="channel">
         <img
@@ -20,11 +20,10 @@
           src="https://img.freepik.com/free-psd/editable-black-business-logo-psd-embossed-style_53876-123268.jpg?t=st=1648096912~exp=1648097512~hmac=4253f0d944703afc842f0d7521d833b66000e8dd3b66befd6e59e7b6d4d4643b&w=996"
           alt=""
         />
-        <p>Channel name</p>
+        <p>{{cardData?.snippet.channelTitle}}</p>
       </div>
       <div class="description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed architecto
-        nobis accusantium quia dolorem suscipit sapiente perspiciatis quas...
+        {{cardData?.snippet.description | slice:0:40}}...
       </div>
     </div>
     <div class="pop-up-btn" (click)="toggleMenu()"><img src="https://charbase.com/images/glyph/10998" alt="">

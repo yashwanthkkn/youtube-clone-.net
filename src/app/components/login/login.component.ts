@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OauthService } from 'src/app/services/oauth.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { OauthService } from 'src/app/services/oauth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService:OauthService) { }
+  constructor(private authService:OauthService, private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -17,12 +18,11 @@ export class LoginComponent implements OnInit {
     this.authService.signIn()
       .then(()=>{
         // navigate to home
-        // console.log(res);      
+        this.router.navigate(['/home'])
       })
       .catch((err:any)=>{
         // show err msg
         console.log(err);
-        
       })
   }
 
