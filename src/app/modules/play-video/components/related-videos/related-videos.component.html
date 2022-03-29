@@ -3,7 +3,7 @@
 <div class="side-video" *ngIf="relatedVideo.snippet">
     
 <div class="video-card" >   
-    <img src="{{ relatedVideo.snippet.thumbnails.medium.url }}" alt="">
+    <img src="{{ relatedVideo.snippet.thumbnails.medium.url }}" alt="" routerLink="/playVideo/{{ relatedVideo.id.videoId }}">
     <div class="description">
         <a class="title" routerLink="/playVideo/{{ relatedVideo.id.videoId }}">{{ relatedVideo.snippet.title }}</a>
         <p class="channel-name">{{ relatedVideo.snippet.channelTitle }}</p>

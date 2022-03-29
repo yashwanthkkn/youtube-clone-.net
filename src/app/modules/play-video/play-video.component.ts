@@ -28,7 +28,7 @@ export class PlayVideoComponent implements OnInit {
     duration:"",
     publishedAt:"",
     thumbnailsUrl:"",
-    iframeUrl:""
+    iframeUrl:"https://www.youtube.com/embed/"
   }
 
   relatedVideos : any[] = [];
