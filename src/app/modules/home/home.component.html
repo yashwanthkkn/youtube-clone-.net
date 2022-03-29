@@ -1,24 +1,10 @@
 <div class="home-wrap">
-    <div id="label-scroll" class="labels">
+    <div id="label-scroll" class="labels" *ngIf="categories">
         <div [ngClass]="isLabelLeftScrollable ? 'arrow-active' : ''" class="label-item left-arrow" (click)="scroll('left')"><i class="fas fa-angle-left"></i></div>
-        <div class="label-item">Lofi</div>
-        <div class="label-item">Podcast</div>
-        <div class="label-item">Anime</div>
-        <div class="label-item">Sitcoms</div>
-        <div class="label-item">Music</div>
-        <div class="label-item">Debates</div>
-        <div class="label-item">University</div>
-      
-        <div class="label-item">Lofi</div>
-        <div class="label-item">Podcast</div>
-        <div class="label-item">Anime</div>
-        <div class="label-item">Sitcoms</div>
-        <div class="label-item">Music</div>
-        <div class="label-item">Debates</div>
-        <div class="label-item">University</div>
-        <div class="label-item">University</div>
-        <div class="label-item">University</div>
-        <div class="label-item">University</div>
+        <div class="label-item" [ngClass]="currentCategory == 'All'? 'active' : '' " (click)="selectCategory('All', 0)">All</div>
+        <ng-container *ngFor="let category of categories">
+            <div class="label-item" [ngClass]="currentCategory == category.snippet.title ? 'active' : '' " (click)="selectCategory(category.snippet.title,category.id)" >{{category.snippet.title}}</div>
+        </ng-container>
         <div [ngClass]="isLabelRightScrollable ? 'arrow-active' : ''" class="label-item right-arrow" (click)="scroll('right')"><i class="fas fa-angle-right"></i></div>
     </div>
 

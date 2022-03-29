@@ -99,8 +99,59 @@ export class YoutubeService {
     return videos
   }
 
+  async getVideoCategories(){
+    
+    if( ! gapi.client ){
+      await this.authService.loadClient();
+    }
+    let videos: any[] = [];
+    let params = {
+      part : 'snippet',
+      regionCode : 'IN',
+    }
+
+    // if(this.authService.isAuthenticated)
+    //   params.mine = true;
+    
+    let response = await gapi.client.request({
+      'method': 'GET',
+      'path': '/youtube/v3/videoCategories',
+      'params': params,
+      
+    });
+    
+    videos = response.result.items
+    return videos
+  }
 
 
+  async getVideoByCategory(searchKey:string = 'random',maxResults:number = 10){
+    
+    if( ! gapi.client ){
+      await this.authService.loadClient();
+    }
+    let videos: any[] = [];
+    let params = {
+      part : 'snippet',
+      chart: 'mostPopular',
+      maxResults:maxResults,
+      q:searchKey,
+      type: 'video',
+    }
+
+    // if(this.authService.isAuthenticated)
+    //   params.mine = true;
+    
+    let response = await gapi.client.request({
+      'method': 'GET',
+      'path': '/youtube/v3/search',
+      'params': params,
+      
+    });
+    
+    videos = response.result.items
+    return videos
+  }
 
 
   async searchVideos(searchKey:string = 'random',maxResults:number = 10){

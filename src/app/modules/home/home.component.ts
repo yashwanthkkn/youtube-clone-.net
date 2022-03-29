@@ -10,12 +10,16 @@ export class HomeComponent implements OnInit {
 
 
   isLabelLeftScrollable: boolean = false;
-  isLabelRightScrollable: boolean = false;
+  isLabelRightScrollable: boolean = true;
 
   labelScrollWidth: any;
   labelWidth: any;
 
-  videos = []
+  videos: any;
+
+  categories: any;
+
+  currentCategory: string = 'All';
   
   constructor(private api : YoutubeService) { 
     
@@ -26,8 +30,25 @@ export class HomeComponent implements OnInit {
 
     (async()=>{
       this.videos = await this.api.getVideos('firebase',8); 
+      this.categories = await this.api.getVideoCategories();
     })()
 
+    setTimeout(()=>{
+      this.labelScrollEvents();
+    },1000)
+  }
+
+  scroll(direction: string){
+    let label: any = document.getElementById('label-scroll');
+    if(direction == 'right') {
+      label.scrollLeft = label?.scrollLeft + 100;
+    }
+    else if(direction == 'left') {
+      label.scrollLeft = label?.scrollLeft - 100;
+    }
+  }
+
+  labelScrollEvents(){{
     let label: any = document.getElementById('label-scroll');
     this.labelScrollWidth = label?.scrollWidth;
     this.labelWidth = label?.clientWidth;
@@ -58,15 +79,16 @@ export class HomeComponent implements OnInit {
         this.isLabelRightScrollable = true;
       }
     });
-  }
+  }}
 
-  scroll(direction: string){
-    let label: any = document.getElementById('label-scroll');
-    if(direction == 'right') {
-      label.scrollLeft = label?.scrollLeft + 100;
-    }
-    else if(direction == 'left') {
-      label.scrollLeft = label?.scrollLeft - 100;
+  selectCategory(category: string, id: any) {
+    if(category != this.currentCategory) {
+      this.currentCategory = category;
+      (
+        async()=>{
+          (this.currentCategory == 'All') ? this.videos = await this.api.getVideos('firebase',8) : this.videos = await this.api.getVideoByCategory(category,8);
+        }
+      )()
     }
   }
 

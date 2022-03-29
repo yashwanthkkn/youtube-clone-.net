@@ -27,6 +27,11 @@
             font-size: 14px;
             margin: 0px 5px;
             border: 1px solid #cecece;
+            white-space: nowrap;
+            cursor: pointer;
+            &:hover{
+                background-color: rgba(0, 0, 0, 0.1);
+            }
         }
         .left-arrow{
             position: fixed;
@@ -46,6 +51,9 @@
                 height: 100%;
                 top: 0;
                 left: 40px;
+            }
+            &:hover{
+                background-color: white;
             }
         }
         .right-arrow{
@@ -67,6 +75,17 @@
                 height: 100%;
                 left: -45px;
                 top: 0px;
+            }
+            &:hover{
+                background-color: white;
+            }
+        }
+        .active{
+            background-color: black;
+            color: white;
+            &:hover{
+                background-color: black;
+                color: white;
             }
         }
         .arrow-active{
