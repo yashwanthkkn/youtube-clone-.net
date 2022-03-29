@@ -10,7 +10,9 @@ export class OauthService {
   GoogleAuth:any = undefined; 
   isAuthenticated : boolean = false;
   
-  constructor() { }
+  constructor() { 
+    this.loadClient();
+  }
 
   loadClient(){
     return new Promise((resolve,reject)=>{
@@ -49,7 +51,10 @@ export class OauthService {
   }
 
   signOut(){
-    this.isAuthenticated = false;
-    sessionStorage.removeItem('accessToken');
+    return new Promise((resolve,reject)=>{
+      this.isAuthenticated = false;
+      sessionStorage.removeItem('accessToken');
+      resolve('done');
+    })
   }
 }

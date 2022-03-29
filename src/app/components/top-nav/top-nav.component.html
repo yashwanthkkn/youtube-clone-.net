@@ -18,17 +18,17 @@
         </button>
     </div>
       
-     <!-- <div class="nav-item controls">
+    <div  *ngIf="!authService.isAuthenticated" class="nav-item controls">
         <div><img src="assets/img/apps.svg" alt="Apps" /></div>
         <div><i class="fas fa-ellipsis-v"></i></div>
-        <div>
+        <a routerLink="/login">
             <button class="sign-in" >
                 <i class="fas fa-user-circle"></i>
                 SIGN IN
-               </button>
-        </div>
-    </div> -->
-  <div class="nav-item controls">
+            </button>
+        </a>
+    </div>
+    <div *ngIf="authService.isAuthenticated" class="nav-item controls">
         <div><i class="fas fa-video-plus"></i></div>
         <div><img src="assets/img/apps.svg" alt="Apps" /></div>
         <div><i class="fas fa-bell"></i></div>

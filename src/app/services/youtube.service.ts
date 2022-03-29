@@ -12,7 +12,34 @@ export class YoutubeService {
 
 
   async getVideos(searchKey:string = 'random',maxResults:number = 10){
-    console.log(searchKey);
+    
+    if( ! gapi.client ){
+      await this.authService.loadClient();
+    }
+    let videos: never[] = [];
+    let params = {
+      part : 'snippet',
+      mine : false,
+      maxResults:maxResults,
+      chart:'mostPopular',
+      q:searchKey
+    }
+
+    if(this.authService.isAuthenticated)
+      params.mine = true;
+    
+    let response = await gapi.client.request({
+      'method': 'GET',
+      'path': '/youtube/v3/videos',
+      'params': params,
+      
+    });
+    
+    videos = response.result.items
+    return videos
+  }
+
+  async searchVideos(searchKey:string = 'random',maxResults:number = 10){
     
     if( ! gapi.client ){
       await this.authService.loadClient();

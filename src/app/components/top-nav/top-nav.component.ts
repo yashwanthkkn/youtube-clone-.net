@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { OauthService } from 'src/app/services/oauth.service';
 
 @Component({
   selector: 'app-top-nav',
@@ -7,7 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class TopNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService:OauthService) { }
 
   @Output() extentNavEvent = new EventEmitter<string>();
   ngOnInit(): void {

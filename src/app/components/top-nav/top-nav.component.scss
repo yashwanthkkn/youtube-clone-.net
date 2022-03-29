@@ -79,6 +79,7 @@
     font-weight: bold;
     background-color: white;
     // width: 125px;
+    cursor: pointer;
 }
 .menu-channel-icon{
             border-style: hidden;
@@ -88,7 +89,7 @@
 .popup{
           position:absolute;
           top: 0;
-          right: 95px;
+          right: 50px;
           display: none;
           z-index: 2;
 }
