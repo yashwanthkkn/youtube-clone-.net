@@ -1,41 +1,16 @@
 @import "/src/_variables";
 .library-container{
     width: 100%;
-    height: fit-content;
-    font-size: 14px;
+    height: 100%;
     display: flex;
     justify-content: space-between;
+    padding: 0px 50px;
+    padding-bottom: 3rem;
     .left-container{
-        width: 65%;
-        height: 100vh;
-        margin-left: 200px;
         padding: 0px 20px;
-        
-        // .history-top{
-        //     width: 100%;
-        //     margin-top: 30px;
-        //     padding: 0px 10px;
-        //     // padding-top: 20px;
-        //     // border: 1px solid black;
-        //     height: 30px;
-        //     display: flex;
-        //     align-items: center;
-        //     // margin: 0px 10px;
-        //     justify-content: space-between;
-        //     span{
-        //         margin-left: 10px;
-        //         font-size: 16px;
-        //         font-weight: 500;
-        //     }
-        //     a{
-        //         color: rgb(18, 116, 214);
-        //         font-weight: 500;
-        //     }
-        // }
-
         .history-card{
           display: flex;
-          gap: 5px; 
+          gap: 0.5rem; 
           flex-wrap: wrap;
         }
     }

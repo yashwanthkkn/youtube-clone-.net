@@ -3,37 +3,27 @@
         <div class="history">
             <app-library-header [header]="libraryTop[0]"></app-library-header>
             <div class="history-card" >
-                <div *ngFor="let i of history">
-                    <app-library-card></app-library-card>
-                </div>
-                
+                    <app-library-card *ngFor="let data of videos" [cardData]="data"></app-library-card>
             </div>
-           
         </div>
         <div class="watch-later">
             <app-library-header [header]="libraryTop[1]"></app-library-header>
             <div class="history-card">
-                <div *ngFor="let i of watchLater">
-                    <app-library-card></app-library-card>
-                </div>
+                <app-library-card *ngFor="let data of videos" [cardData]="data"></app-library-card>
             </div>
         </div>
 
         <div class="playlist">
             <app-library-header [header]="libraryTop[2]"></app-library-header>
             <div class="history-card">
-                <div *ngFor="let i of playList">
-                    <app-library-card></app-library-card>
-                </div>
+                <app-library-card *ngFor="let data of videos" [cardData]="data"></app-library-card>
             </div>
         </div>
 
         <div class="liked-video">
             <app-library-header [header]="libraryTop[3]"></app-library-header>
             <div class="history-card">
-                <div *ngFor="let i of likedVideo">
-                    <app-library-card></app-library-card>
-                </div>
+                <app-library-card *ngFor="let data of videos" [cardData]="data"></app-library-card>
             </div>
         </div>
     </div>
