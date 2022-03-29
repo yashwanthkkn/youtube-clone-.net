@@ -14,20 +14,13 @@ export class SearchComponent implements OnInit {
   showDiv:boolean = false;
   ngOnInit(): void {
     this.searchString = this.route.snapshot.paramMap.get("query");
-    console.log(this.searchString);
-
+   
     (async()=>{
-      // loading the cards
        this.videos = await this.ytService.searchVideos(this.searchString,10); 
-      // let videos = await this.api.getVideos('firebase',1); 
-       console.log(this.videos);
-      
     })()
     
   }
   toggleDiv(){
-    console.log(this.showDiv);
-    
     if(this.showDiv === true){
       this.showDiv = false;
     }

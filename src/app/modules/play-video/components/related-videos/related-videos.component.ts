@@ -15,9 +15,7 @@ export class RelatedVideosComponent implements OnInit {
  
   isTripleDotClicked:boolean = false;
 
-  ngOnInit(): void {
-    console.log(this.relatedVideo);
-  }
+  ngOnInit(): void {}
 
   onTrippleDotClick(){
     this.isTripleDotClicked = !this.isTripleDotClicked;

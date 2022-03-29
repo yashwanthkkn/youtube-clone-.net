@@ -12,11 +12,6 @@ export class TagsComponent implements OnInit {
   labelScrollWidth:any;
   labelWidth: any;
 
-  ngOnInit(): void {
-    let label = document.getElementById("scroll")
-    console.log(label?.clientWidth)
-    console.log(label?.scrollWidth)
-    console.log(label?.clientWidth)
-  }
+  ngOnInit(): void {}
 
 }

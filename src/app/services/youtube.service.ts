@@ -25,7 +25,6 @@ export class YoutubeService {
       maxResults:maxResults,
       chart:'mostPopular',
       q:searchKey,
-      id:"X2kjYdAJMIM"
     }
 
     if(this.authService.isAuthenticated)

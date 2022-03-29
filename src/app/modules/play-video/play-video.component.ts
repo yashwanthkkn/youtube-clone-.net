@@ -28,7 +28,7 @@ export class PlayVideoComponent implements OnInit {
     duration:"",
     publishedAt:"",
     thumbnailsUrl:"",
-    iframeUrl:"https://www.youtube.com/embed/"
+    iframeUrl:""
   }
 
   relatedVideos : any[] = [];
@@ -39,7 +39,6 @@ export class PlayVideoComponent implements OnInit {
       (async()=>{
         let videos = await  this.ytube.getSingleVideo(this.videoId);
         if(videos.length !== 0){
-          this.video.iframeUrl = "https://www.youtube.com/embed/";
           this.video.id = videos[0].id;
           this.video.channelTitle = videos[0].snippet.channelTitle;
           this.video.title = videos[0].snippet.title;
@@ -50,7 +49,8 @@ export class PlayVideoComponent implements OnInit {
           this.video.viewCount = videos[0].statistics.viewCount;
           this.video.commentCount = videos[0].statistics.commentCount;
           this.video.duration = videos[0].contentDetails.duration;
-          this.video.iframeUrl += this.video.id;
+          this.video.iframeUrl = "https://www.youtube.com/embed/"+this.video.id;
+          
         } 
         else{
           this.router.navigate(['/']);

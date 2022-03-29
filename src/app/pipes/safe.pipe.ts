@@ -7,7 +7,8 @@ export class SafePipe implements PipeTransform {
 
   constructor(private sanitizer: DomSanitizer) { }
   transform(value: string, ...args: unknown[]): unknown {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(value);
+    let sanitized = this.sanitizer.bypassSecurityTrustResourceUrl(value);
+    return sanitized
   }
 
 }
