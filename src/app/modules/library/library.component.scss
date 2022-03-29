@@ -5,10 +5,12 @@
     font-size: 14px;
     display: flex;
     justify-content: space-between;
+    justify-content: center;
     .left-container{
         width: 65%;
         height: 100vh;
-        margin-left: 200px;
+        // border: 1px solid black;
+        // margin-left: 200px;
         padding: 0px 20px;
         
         // .history-top{
@@ -37,11 +39,12 @@
           display: flex;
           gap: 5px; 
           flex-wrap: wrap;
+
         }
     }
     .right-container{
         margin-top: 15%;
-      
+        // border: 1px solid black;
         font-size: 11px;
         margin-right: 30px;
         .library-right{
