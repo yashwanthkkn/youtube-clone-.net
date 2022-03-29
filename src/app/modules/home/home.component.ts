@@ -26,8 +26,9 @@ export class HomeComponent implements OnInit {
 
     (async()=>{
       // loading the cards
-      this.videos = await this.api.getVideos('firebase',10); 
-      console.log(this.videos);
+      // this.videos = await this.api.getVideos('firebase',1); 
+      // let videos = await this.api.getVideos('firebase',1); 
+      // console.log(videos);
       
     })()
 
