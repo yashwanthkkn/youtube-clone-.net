@@ -20,7 +20,8 @@ export class PlayVideoComponent implements OnInit {
     commentCount:"",
     duration:"",
     publishedAt:"",
-    thumbnailsUrl:""
+    thumbnailsUrl:"",
+    iframeUrl:"https://www.youtube.com/embed/"
   }
 
 
@@ -41,6 +42,7 @@ export class PlayVideoComponent implements OnInit {
         this.video.viewCount = videos[0].statistics.viewCount;
         this.video.commentCount = videos[0].statistics.commentCount;
         this.video.duration = videos[0].contentDetails.duration;
+        this.video.iframeUrl+=videos[0].id;
       } 
       console.log(this.video);
       

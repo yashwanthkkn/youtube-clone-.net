@@ -3,14 +3,17 @@
 <div class="play-video">
     <div class="left-container">
         <div class="left-video image">
-            <img src="/assets/img/image.jpg" alt="img" srcset="" />
+            <!-- <img src={{video.thumbnailsUrl}} alt="img" srcset="" /> -->
+            <!-- <iframe [src]="video.iframeUrl | safe" frameborder="0"></iframe> -->
+            <iframe  [src]="video.iframeUrl | safe" 
+            title={{video.title}} frameborder="0" allow="accelerometer; autoplay *; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="video-description">
-            <p class="video-title">How to use Git When working with a team?</p>
+            <p class="video-title">{{video.title}}</p>
             <div class="views">
-                <p>60,515 <span>views Sep 14,2020</span></p>
+                <p>{{video.viewCount}} <span>views Sep 14,2020</span></p>
                 <div class="likes">
-                    <div class="tooltip"><i class="fa fa-thumbs-o-up" aria-hidden="true" ></i>  LIKE<div class="tooltiptext">i like this</div> 
+                    <div class="tooltip"><i class="fa fa-thumbs-o-up" aria-hidden="true" ></i>  {{video.likeCount}}<div class="tooltiptext">i like this</div> 
                     </div>
                     <div class="tooltip"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i>DISLIKE <div class="tooltiptext">i dislike this</div> </div>
                     <div class="tooltip"> <i class="fa fa-share" aria-hidden="true"></i> SHARE
@@ -29,20 +32,19 @@
                 <div class="channel-name">
                     <img src="/assets/img/image.jpg" alt="">
                     <div class="subscribers">
-                        <p>Ako Dev</p>
+                        <p>{{video.channelTitle}}</p>
                         <span>372 subscribers</span>
                     </div>
                 </div>
             <button class="subs-btn">SUBSCRIBE</button>
             </div>
             <div class="channel-text">
-                <p>Hi all welcome to ako.dev! So you know git... now how do you use it when you work with a team for work or on a project? do you just use the same branch? Lets try and put a workflow together so it makes our lives easier!</p>
-
-                <p class="show-light">SHOW MORE</p>
+                <p>{{video.description}}</p>
             </div>
+            <p class="show-light">SHOW MORE</p>
         </div>
 
-        <!-- <div class="comment-section">
+        <div class="comment-section desktop-view">
             <div class="top-section">
                 <div>63 Comments</div>
                 <div class="sort-by">
@@ -63,9 +65,8 @@
             </div>
         </div>
 
-    </div> -->
+    </div>
     
-   </div>
    <div class="right-container" >
     <app-tags></app-tags>
     <div *ngFor="let item of array">
@@ -74,7 +75,7 @@
    </div>
 </div>
 
-<div class="comment-section">
+<div class="comment-section phone-view">
     <div class="top-section">
         <div>63 Comments</div>
         <div class="sort-by" >

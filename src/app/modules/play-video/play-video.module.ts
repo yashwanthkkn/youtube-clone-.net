@@ -7,6 +7,7 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { RelatedVideosComponent } from './components/related-videos/related-videos.component';
 import { PopupComponent } from './components/popup/popup.component';
 import { TagsComponent } from './components/tags/tags.component';
+import { SafePipe } from 'src/app/pipes/safe.pipe';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { TagsComponent } from './components/tags/tags.component';
     CommentsComponent,
     RelatedVideosComponent,
     PopupComponent,
-    TagsComponent
+    TagsComponent,
+    SafePipe
   ],
   imports: [
     CommonModule,

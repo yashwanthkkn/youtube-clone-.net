@@ -8,6 +8,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { FloatNavComponent } from './components/float-nav/float-nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { ExtendedNavComponent } from './components/extended-nav/extended-nav.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ExtendedNavComponent } from './components/extended-nav/extended-nav.com
     FloatNavComponent,
     LoginComponent,
     ExtendedNavComponent,
+    
   ],
   imports: [
     BrowserModule,
