@@ -1,4 +1,4 @@
-<div class="library-card">
+<div class="library-card" *ngIf="cardData!==undefined; else noData">
     <div class="library-image-container">
         <img src="{{ cardData?.snippet.thumbnails.medium.url }}" alt="thumbnail">
     </div>
@@ -18,3 +18,13 @@
         <small>72k views <span>7 days ago</span></small>
     </div>
 </div>
+<ng-template #noData>
+    <div class="library-card is-loading">
+        <div class="library-image-container">
+        </div>
+        <div class="video-info">
+        </div>
+        <div class="channel-info">
+        </div>
+    </div>
+</ng-template>

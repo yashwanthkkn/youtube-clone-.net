@@ -10,6 +10,9 @@ import { YoutubeService } from 'src/app/services/youtube.service';
 export class LibraryComponent implements OnInit {
 
   videos  = []
+
+  isLoading: boolean = false;
+
   constructor(private api : YoutubeService, public authService: OauthService) {
     
    }
@@ -44,9 +47,10 @@ export class LibraryComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    this.isLoading = true;
     (async()=>{
-      this.videos = await this.api.getVideos('firebase',4);  
+      this.videos = await this.api.getVideos('firebase',8);  
+      this.isLoading = false;
     })()
   }
 

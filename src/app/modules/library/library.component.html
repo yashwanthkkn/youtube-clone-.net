@@ -2,29 +2,61 @@
     <div class="left-container">
         <div class="history">
             <app-library-header [header]="libraryTop[0]"></app-library-header>
-            <div class="history-card" >
-                    <app-library-card *ngFor="let data of videos" [cardData]="data"></app-library-card>
+            <div class="history-card" *ngIf="!isLoading; else loading">
+                <app-library-card *ngFor="let data of videos" [cardData]="data"></app-library-card>
             </div>
+            <ng-template #loading>
+                <div class="history-card is-loading">
+                    <app-library-card></app-library-card>
+                    <app-library-card></app-library-card>
+                    <app-library-card></app-library-card>
+                    <app-library-card></app-library-card>
+                </div>
+            </ng-template>
         </div>
         <div class="watch-later">
             <app-library-header [header]="libraryTop[1]"></app-library-header>
-            <div class="history-card">
+            <div class="history-card" *ngIf="!isLoading; else loading">
                 <app-library-card *ngFor="let data of videos" [cardData]="data"></app-library-card>
             </div>
+            <ng-template #loading>
+                <div class="history-card is-loading">
+                    <app-library-card></app-library-card>
+                    <app-library-card></app-library-card>
+                    <app-library-card></app-library-card>
+                    <app-library-card></app-library-card>
+                </div>
+            </ng-template>
         </div>
 
         <div class="playlist">
             <app-library-header [header]="libraryTop[2]"></app-library-header>
-            <div class="history-card">
+            <div class="history-card" *ngIf="!isLoading; else loading">
                 <app-library-card *ngFor="let data of videos" [cardData]="data"></app-library-card>
             </div>
+            <ng-template #loading>
+                <div class="history-card is-loading">
+                    <app-library-card></app-library-card>
+                    <app-library-card></app-library-card>
+                    <app-library-card></app-library-card>
+                    <app-library-card></app-library-card>
+                </div>
+            </ng-template>
         </div>
 
         <div class="liked-video">
             <app-library-header [header]="libraryTop[3]"></app-library-header>
-            <div class="history-card">
+            <div class="history-card" *ngIf="!isLoading; else loading">
                 <app-library-card *ngFor="let data of videos" [cardData]="data"></app-library-card>
             </div>
+            <ng-template #loading>
+                <div class="history-card is-loading">
+                    <app-library-card></app-library-card>
+                    <app-library-card></app-library-card>
+                    <app-library-card></app-library-card>
+                    <app-library-card></app-library-card>
+                </div>
+            </ng-template>
         </div>
     </div>
     <div class="right-container">
