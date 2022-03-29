@@ -1,4 +1,4 @@
-<div class="home-card" *ngIf="!isLoading; else loading" >
+<a class="home-card" *ngIf="!isLoading; else loading"  routerLink="/playVideo/{{cardData?.id}}">
     <div class="thumbnail">
         <img src="{{ cardData?.snippet.thumbnails.medium.url }}" alt="img" class="img">
     </div>
@@ -21,7 +21,7 @@
             <div class="meta">74K views . {{cardData?.snippet.publishedAt | dateAgo}}</div>
         </div>
     </div>
-</div>
+</a>
 <ng-template #loading>
     <div class="home-card is-loading">
         <div class="thumbnail">
