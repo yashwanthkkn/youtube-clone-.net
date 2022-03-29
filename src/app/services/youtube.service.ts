@@ -131,4 +131,32 @@ export class YoutubeService {
     videos = response.result.items
     return videos
   }
+
+  getHistory(maxResults:number = 10){  
+    return new Promise(async (resolve,reject)=>{
+      try{
+        if( ! gapi.client ){
+          await this.authService.loadClient();
+        }
+        let videos: never[] = [];
+        let params = {
+          part : 'contentDetails,snippet',
+          mine : false,
+          // maxResults:maxResults,
+        }
+    
+        if(this.authService.isAuthenticated)
+          params.mine = true;
+        
+        let response = await gapi.client.request({
+          'method': 'GET',
+          'path': '/youtube/v3/channels',
+          'params': params,
+        });
+        resolve(response)
+      }catch(err){
+        reject(err)
+      }
+    })
+  }
 }

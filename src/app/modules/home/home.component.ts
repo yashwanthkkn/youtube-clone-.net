@@ -25,11 +25,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     (async()=>{
-      // loading the cards
-      // this.videos = await this.api.getVideos('firebase',1); 
-      // let videos = await this.api.getVideos('firebase',1); 
-      // console.log(videos);
-      
+      this.videos = await this.api.getVideos('firebase',8); 
     })()
 
     let label: any = document.getElementById('label-scroll');

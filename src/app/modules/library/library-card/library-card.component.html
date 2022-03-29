@@ -1,10 +1,10 @@
 <div class="library-card">
     <div class="library-image-container">
-        <img src="/assets/img/image.jpg" alt="thumbnail">
+        <img src="{{ cardData?.snippet.thumbnails.medium.url }}" alt="thumbnail">
     </div>
     <div class="video-info">
         <div class="text">
-            <p>Natural Language Processing</p>
+            <p class="desc-text">{{ cardData?.snippet.description | slice:0:35}}...</p>
         </div>
        
         <div class="triple-dot" >
@@ -12,7 +12,9 @@
         </div>
     </div>
     <div class="channel-info">
-        <p>Presidio</p>
-        <p>72k views <span>7 days ago</span></p>
+        <div>
+            <small>{{ cardData?.snippet.channelTitle }}</small>
+        </div>
+        <small>72k views <span>7 days ago</span></small>
     </div>
 </div>
