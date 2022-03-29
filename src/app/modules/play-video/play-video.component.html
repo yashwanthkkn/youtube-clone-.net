@@ -38,12 +38,11 @@
                 </div>
             <button class="subs-btn">SUBSCRIBE</button>
             </div>
-            <div class="channel-text">
-                <p>{{video.description}}</p>
+            <div class="channel-text" >
+                <p [ngClass]="toggleDescription ? 'showAll' : '' " >{{video.description}}</p>
             </div>
-            <p class="show-light">SHOW MORE</p>
+            <p class="show-light" (click)="showAll()">SHOW {{toggleDescription ? 'LESS' : 'MORE'}}</p>
         </div>
-
         <div class="comment-section desktop-view">
             <div class="top-section">
                 <div>63 Comments</div>

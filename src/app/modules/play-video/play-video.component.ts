@@ -9,7 +9,7 @@ export class PlayVideoComponent implements OnInit {
   loader:boolean = false;
   constructor(private ytube : YoutubeService) { }
   array:number[] = [1,2,3,4,5,6,7,8,9,10]
-
+  toggleDescription:boolean=false;
   video = {
     id:"",
     channelTitle:"",
@@ -47,6 +47,11 @@ export class PlayVideoComponent implements OnInit {
       console.log(this.video);
       
     })()
+  }
+
+  showAll(){
+    this.toggleDescription = !this.toggleDescription;
+    
   }
 
 }
