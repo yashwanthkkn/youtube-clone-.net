@@ -9,11 +9,14 @@ export class RelatedVideosComponent implements OnInit {
 
   constructor() { }
 
+  @Input() relatedVideo: any = [];
+
   // @Output() closePopUp = new EventEmitter<boolean>();
  
   isTripleDotClicked:boolean = false;
 
   ngOnInit(): void {
+    console.log(this.relatedVideo);
   }
 
   onTrippleDotClick(){

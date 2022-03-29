@@ -71,6 +71,34 @@ export class YoutubeService {
   }
 
 
+  async getRelatedVideo(searchKey:string = 'random',maxResults:number = 10){
+    
+    if( ! gapi.client ){
+      await this.authService.loadClient();
+    }
+    let videos: any[] = [];
+    let params = {
+      part : 'snippet',
+      maxResults:maxResults,
+      type: 'video',
+      relatedToVideoId:searchKey
+    }
+
+    // if(this.authService.isAuthenticated)
+    //   params.mine = true;
+    
+    let response = await gapi.client.request({
+      'method': 'GET',
+      'path': '/youtube/v3/search',
+      'params': params,
+      
+    });
+    
+    videos = response.result.items
+    return videos
+  }
+
+
 
 
 

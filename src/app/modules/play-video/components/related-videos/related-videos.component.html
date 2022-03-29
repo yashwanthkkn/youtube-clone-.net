@@ -1,12 +1,12 @@
 
 
-<div class="side-video" >
+<div class="side-video" *ngIf="relatedVideo.snippet">
     
 <div class="video-card" >   
-    <img src="/assets/img/image.jpg" alt="">
+    <img src="{{ relatedVideo.snippet.thumbnails.medium.url }}" alt="">
     <div class="description">
-        <p class="title">Git & GitHub Tutorial</p>
-        <p class="channel-name">Presidio</p>
+        <a class="title" routerLink="/playVideo/{{ relatedVideo.id.videoId }}">{{ relatedVideo.snippet.title }}</a>
+        <p class="channel-name">{{ relatedVideo.snippet.channelTitle }}</p>
         <div class="views-uploaded">
             <p>197K views</p>
             <p>4 years ago</p>

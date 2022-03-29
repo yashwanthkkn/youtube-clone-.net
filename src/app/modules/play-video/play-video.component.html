@@ -11,16 +11,16 @@
         <div class="video-description">
             <p class="video-title">{{video.title}}</p>
             <div class="views">
-                <p>{{video.viewCount}} <span>views Sep 14,2020</span></p>
+                <p>{{numberWithCommas(video.viewCount)}} views <span>•</span> <span> Sep 14,2020</span></p>
                 <div class="likes">
-                    <div class="tooltip"><i class="fa fa-thumbs-o-up" aria-hidden="true" ></i>  {{video.likeCount}}<div class="tooltiptext">i like this</div> 
+                    <div class="tooltip"><i class="fal fa-thumbs-up"></i> {{formatCounts(video.likeCount)}}<div class="tooltiptext">i like this</div> 
                     </div>
-                    <div class="tooltip"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i>DISLIKE <div class="tooltiptext">i dislike this</div> </div>
-                    <div class="tooltip"> <i class="fa fa-share" aria-hidden="true"></i> SHARE
+                    <div class="tooltip"><i class="fal fa-thumbs-down"></i>DISLIKE <div class="tooltiptext">i dislike this</div> </div>
+                    <div class="tooltip"> <i class="fal fa-share"></i> SHARE
                         <div class="tooltiptext">share</div> </div>
-                    <div class="tooltip"><i class="fa fa-scissors" aria-hidden="true"></i>CLIP
+                    <div class="tooltip"><i class="fal fa-cut"></i> CLIP
                         <div class="tooltiptext">clip</div> </div>
-                    <div class="tooltip"><i class="fa fa-floppy-o" aria-hidden="true"></i>SAVE
+                    <div class="tooltip"><i class="fal fa-save"></i>SAVE
                         <div class="tooltiptext">save</div> </div>
                     <div>...</div>
                 </div>
@@ -69,8 +69,8 @@
     
    <div class="right-container" >
     <app-tags></app-tags>
-    <div *ngFor="let item of array">
-        <app-related-videos></app-related-videos>
+    <div *ngFor="let relatedVideo of relatedVideos">
+        <app-related-videos [relatedVideo]="relatedVideo" ></app-related-videos>
     </div>
    </div>
 </div>

@@ -24,6 +24,8 @@ export class PlayVideoComponent implements OnInit {
     iframeUrl:"https://www.youtube.com/embed/"
   }
 
+  relatedVideos : any[] = [];
+
 
   ngOnInit(): void {
     this.loader = true;
@@ -45,8 +47,23 @@ export class PlayVideoComponent implements OnInit {
         this.video.iframeUrl+=videos[0].id;
       } 
       console.log(this.video);
-      
+      let relatedVideos = await this.ytube.getRelatedVideo('X2kjYdAJMIM');
+      this.relatedVideos = relatedVideos;
+      console.log(this.relatedVideos);      
     })()
+  }
+
+  numberWithCommas(x :any) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  formatCounts(views: any) {
+    if (views < 1e3) return views;
+    if (views >= 1e3 && views < 1e6) return +(views / 1e3).toFixed(1) + "K";
+    if (views >= 1e6 && views < 1e9) return +(views / 1e6).toFixed(1) + "M";
+    if (views >= 1e9 && views < 1e12) return +(views / 1e9).toFixed(1) + "B";
+    if (views >= 1e12) return +(views / 1e12).toFixed(1) + "T";
+    return views;
   }
 
 }
