@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { OauthService } from 'src/app/services/oauth.service';
 import {YoutubeService} from "../../services/youtube.service"
 @Component({
   selector: 'app-play-video',
@@ -7,9 +9,14 @@ import {YoutubeService} from "../../services/youtube.service"
 })
 export class PlayVideoComponent implements OnInit {
   loader:boolean = false;
-  constructor(private ytube : YoutubeService) { }
+
+  constructor(private ytube : YoutubeService,private router: Router, private route: ActivatedRoute,private oauth: OauthService) { }
   array:number[] = [1,2,3,4,5,6,7,8,9,10]
+
   toggleDescription:boolean=false;
+
+  videoId :any;
+
   video = {
     id:"",
     channelTitle:"",
@@ -21,36 +28,37 @@ export class PlayVideoComponent implements OnInit {
     duration:"",
     publishedAt:"",
     thumbnailsUrl:"",
-    iframeUrl:"https://www.youtube.com/embed/"
+    iframeUrl:""
   }
 
   relatedVideos : any[] = [];
 
-
   ngOnInit(): void {
-    this.loader = true;
-    (async()=>{
-      // loading the cards
-      // this.videos = await this.api.getVideos('firebase',1); 
-      let videos = await  this.ytube.getSingleVideo("X2kjYdAJMIM");
-      if(videos.length !== 0){
-        this.video.id = videos[0].id;
-        this.video.channelTitle = videos[0].snippet.channelTitle;
-        this.video.title = videos[0].snippet.title;
-        this.video.description =videos[0].snippet.description;
-        this.video.thumbnailsUrl = videos[0].snippet.thumbnails.default.url;
-        this.video.publishedAt = videos[0].snippet.publishedAt;
-        this.video.likeCount = videos[0].statistics.likeCount;
-        this.video.viewCount = videos[0].statistics.viewCount;
-        this.video.commentCount = videos[0].statistics.commentCount;
-        this.video.duration = videos[0].contentDetails.duration;
-        this.video.iframeUrl+=videos[0].id;
-      } 
-      console.log(this.video);
-      let relatedVideos = await this.ytube.getRelatedVideo('X2kjYdAJMIM');
-      this.relatedVideos = relatedVideos;
-      console.log(this.relatedVideos);      
-    })()
+    this.route.params.subscribe((params: any) => {
+      this.videoId = params.id;
+      (async()=>{
+        let videos = await  this.ytube.getSingleVideo(this.videoId);
+        if(videos.length !== 0){
+          this.video.iframeUrl = "https://www.youtube.com/embed/";
+          this.video.id = videos[0].id;
+          this.video.channelTitle = videos[0].snippet.channelTitle;
+          this.video.title = videos[0].snippet.title;
+          this.video.description =videos[0].snippet.description;
+          this.video.thumbnailsUrl = videos[0].snippet.thumbnails.default.url;
+          this.video.publishedAt = videos[0].snippet.publishedAt;
+          this.video.likeCount = videos[0].statistics.likeCount;
+          this.video.viewCount = videos[0].statistics.viewCount;
+          this.video.commentCount = videos[0].statistics.commentCount;
+          this.video.duration = videos[0].contentDetails.duration;
+          this.video.iframeUrl += this.video.id;
+        } 
+        else{
+          this.router.navigate(['/']);
+        }
+        let relatedVideos = await this.ytube.getRelatedVideo(this.videoId, 15);
+        this.relatedVideos = relatedVideos;
+      })()
+    });
   }
 
   numberWithCommas(x :any) {

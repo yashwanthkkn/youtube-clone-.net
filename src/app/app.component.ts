@@ -19,10 +19,10 @@ export class AppComponent {
 
     // hide side bar when play video module is rendered
     router.events.subscribe(event=>{
-      if(event instanceof NavigationStart && event.url === '/playVideo'){
+      if(event instanceof NavigationStart && event.url.startsWith('/playVideo')){
         this.hasVideoView = true;
         this.sideNav?.hideNav();
-      }else if(event instanceof NavigationStart && event.url !== '/playVideo'){
+      }else if(event instanceof NavigationStart && !event.url.startsWith('/playVideo')){
         this.hasVideoView = false;
         this.sideNav?.showNav(); 
       }
