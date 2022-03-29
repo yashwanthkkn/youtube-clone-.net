@@ -7,8 +7,10 @@ declare var gapi: any;
   providedIn: 'root'
 })
 export class YoutubeService {
-  
-  constructor(private authService : OauthService) { }
+  searchString:string = '';
+  constructor(private authService : OauthService) { 
+    
+  }
 
 
   async getVideos(searchKey:string = 'random',maxResults:number = 10){

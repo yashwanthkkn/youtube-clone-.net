@@ -7,15 +7,18 @@ import { SearchListComponent } from './components/search-list/search-list.compon
 import { PopupComponent } from './components/popup/popup.component';
 
 
+
 @NgModule({
   declarations: [
     SearchComponent,
     SearchListComponent,
-    PopupComponent
+    PopupComponent,
+    
   ],
   imports: [
     CommonModule,
-    SearchRoutingModule
+    SearchRoutingModule,
+    
   ]
 })
 export class SearchModule { }

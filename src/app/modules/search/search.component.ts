@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { YoutubeService } from 'src/app/services/youtube.service';
 
 @Component({
   selector: 'app-search',
@@ -6,11 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-
-
-  constructor() { }
+  videos = []
+  searchString:any=''
+  constructor(private route:ActivatedRoute,public ytService:YoutubeService) { }
   showDiv:boolean = false;
   ngOnInit(): void {
+    this.searchString = this.route.snapshot.paramMap.get("query");
+    console.log(this.searchString);
+
+    (async()=>{
+      // loading the cards
+       this.videos = await this.ytService.searchVideos(this.searchString,10); 
+      // let videos = await this.api.getVideos('firebase',1); 
+       console.log(this.videos);
+      
+    })()
+    
   }
   toggleDiv(){
     console.log(this.showDiv);

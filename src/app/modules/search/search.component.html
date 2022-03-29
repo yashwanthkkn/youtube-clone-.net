@@ -63,9 +63,9 @@
     
   </div>
   <div class="h-line"></div>
-  <div *ngFor="let i of [0,0,0,0,0,0,0,0,0,0]">
-    <app-search-list></app-search-list>
-  </div>
+ 
+    <app-search-list *ngFor="let card of videos" [cardData]="card"></app-search-list>
+ 
     
 
   </div>
