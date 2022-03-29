@@ -2,11 +2,11 @@
     <div class="google-item">
         <div class="acc-icon">
             <button class="menu-channel-icon">
-                <i class="fas fa-user-circle"></i>  
+                <img src="{{authService.authUser.url}}" class="acc_img" alt=""  >  
             </button>  
         </div>
         <div class="details">
-            <div class="google-acc-name">G Meghana</div>
+            <div class="google-acc-name">{{authService.authUser.name}}</div>
             <div>
                 <a>
                     <div class="manage-acc" >Manage your Google Account</div>

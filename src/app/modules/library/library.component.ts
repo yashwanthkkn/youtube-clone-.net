@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { OauthService } from 'src/app/services/oauth.service';
 import { YoutubeService } from 'src/app/services/youtube.service';
 
 @Component({
@@ -10,10 +10,8 @@ import { YoutubeService } from 'src/app/services/youtube.service';
 export class LibraryComponent implements OnInit {
 
   videos  = []
-  constructor(private route : ActivatedRoute, private api : YoutubeService) {
-    this.route.queryParams.subscribe(data => {
-      console.log(data)
-    })
+  constructor(private api : YoutubeService, public authService: OauthService) {
+    
    }
   history:number[]=[1,2,3,4,5,6,7]
   likedVideo:number[] =[1,2,3,4]
@@ -48,9 +46,7 @@ export class LibraryComponent implements OnInit {
   ngOnInit(): void {
 
     (async()=>{
-      this.videos = await this.api.getVideos('firebase',4); 
-      console.log(this.videos);
-      
+      this.videos = await this.api.getVideos('firebase',4);  
     })()
   }
 

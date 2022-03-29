@@ -82,9 +82,9 @@
     cursor: pointer;
 }
 .menu-channel-icon{
-            border-style: hidden;
-            background-color: #f1f1f1;
-            font-size: xx-large;
+      border-style: hidden;
+      font-size: xx-large;
+      background-color: white;
 }
 .popup{
           position:absolute;
@@ -95,6 +95,13 @@
 }
 .menu-channel-icon:hover .popup{
         display: block;
+}
+
+.acc_img{
+  margin-top: 0.25rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
 }
     
     

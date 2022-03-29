@@ -19,6 +19,16 @@
       
         font-size: 11px;
         margin-right: 30px;
+
+        .profile{
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .profile-img{
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+        }
         .library-right{
             width: 150px;
             height: 30px;
@@ -28,10 +38,7 @@
             align-items: center;
            color: $secondary;
         }
-        div:first-child{
-            border-top: .5px solid gray;
-            border-bottom: .5px solid gray;
-        }
+
         div:nth-child(3){
             border-top: .5px solid $secondary;
             border-bottom: .5px solid $secondary;
@@ -41,12 +48,12 @@
 
 @media screen and (max-width:880px) {
     .library-container{
-        margin-right: 70px;
+        // margin-right: 70px;
         // border: 1px solid black;
-        
+        padding: 0px 20px;
         .left-container{
             width: 100%;
-            margin-left: 30px;
+            // margin-left: 30px;
             
         }
         .right-container{
