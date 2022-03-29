@@ -22,7 +22,8 @@ export class YoutubeService {
       mine : false,
       maxResults:maxResults,
       chart:'mostPopular',
-      q:searchKey
+      q:searchKey,
+      id:"X2kjYdAJMIM"
     }
 
     if(this.authService.isAuthenticated)
@@ -38,6 +39,40 @@ export class YoutubeService {
     videos = response.result.items
     return videos
   }
+
+
+  async getSingleVideo(searchKey:string = 'random',maxResults:number = 10){
+    
+    if( ! gapi.client ){
+      await this.authService.loadClient();
+    }
+    let videos: any[] = [];
+    let params = {
+      part : 'snippet,contentDetails,statistics',
+      // mine : false,
+      // maxResults:maxResults,
+      // chart:'mostPopular',
+      // q:searchKey,
+      id:searchKey
+    }
+
+    // if(this.authService.isAuthenticated)
+    //   params.mine = true;
+    
+    let response = await gapi.client.request({
+      'method': 'GET',
+      'path': '/youtube/v3/videos',
+      'params': params,
+      
+    });
+    
+    videos = response.result.items
+    return videos
+  }
+
+
+
+
 
   async searchVideos(searchKey:string = 'random',maxResults:number = 10){
     
