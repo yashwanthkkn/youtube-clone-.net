@@ -9,7 +9,7 @@ export class PlayVideoComponent implements OnInit {
   loader:boolean = false;
   constructor(private ytube : YoutubeService) { }
   array:number[] = [1,2,3,4,5,6,7,8,9,10]
-
+  toggleDescription:boolean=false;
   video = {
     id:"",
     channelTitle:"",
@@ -64,6 +64,10 @@ export class PlayVideoComponent implements OnInit {
     if (views >= 1e9 && views < 1e12) return +(views / 1e9).toFixed(1) + "B";
     if (views >= 1e12) return +(views / 1e12).toFixed(1) + "T";
     return views;
+  }
+  showAll(){
+    this.toggleDescription = !this.toggleDescription;
+    
   }
 
 }
