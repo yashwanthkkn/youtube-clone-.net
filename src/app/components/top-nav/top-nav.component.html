@@ -9,7 +9,7 @@
     <div class="nav-item search">
         <div class="search-icon"><i class="fas fa-search"></i></div>
         <div class="search-bar">
-            <input #searchQuery class="search-input" type="search" placeholder="Search" aria-label="Search" />
+            <input #searchQuery class="search-input" type="search" placeholder="Search" aria-label="Search" (keydown.enter)="search(searchQuery.value)"/>
             <button class="search-btn" (click)="search(searchQuery.value)">
                 <i class="fas fa-search"></i>
             </button>        

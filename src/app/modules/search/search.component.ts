@@ -13,12 +13,12 @@ export class SearchComponent implements OnInit {
   constructor(private route:ActivatedRoute,public ytService:YoutubeService) { }
   showDiv:boolean = false;
   ngOnInit(): void {
-    this.searchString = this.route.snapshot.paramMap.get("query");
-   
-    (async()=>{
-       this.videos = await this.ytService.searchVideos(this.searchString,10); 
-    })()
-    
+    this.route.params.subscribe((params: any) => {
+      this.searchString = params.query;
+      (async()=>{
+        this.videos = await this.ytService.searchVideos(this.searchString,10); 
+     })()
+    })
   }
   toggleDiv(){
     if(this.showDiv === true){
