@@ -1,23 +1,19 @@
 
 <div class="comment">
-    <img src="/assets/img/image.jpg" alt="" srcset="">
+    <img src="{{commentData?.snippet.authorProfileImageUrl}}" alt="" srcset="">
     <div class="comment-text">
         <div class="commenter-name">
-            <p>temmoIRL</p>
-            <p>10 months ago</p>
+            <p>{{commentData?.snippet.authorDisplayName}}</p>
+            <small>{{commentData?.snippet.publishedAt | date:'mediumDate'}}</small>
         </div>
         <div class="actual-comment">
-            extremely straightforward and practical, much appreciated, and I'm sure my team will appreciate me not ruining the master and endless merge conflicts, memeing myself
+            {{commentData?.snippet.textDisplay}}
         </div>
         <div class="reaction">
-            <div class="tooltip"><i class="fal fa-thumbs-up" ></i>20 <span class="tooltiptext">Like</span></div>
+            <div class="tooltip"><i class="fal fa-thumbs-up" ></i>{{commentData?.snippet.likeCount}}<span class="tooltiptext">Like</span></div>
             <div class="tooltip"><i class="fal fa-thumbs-down" ></i> <span class="tooltiptext" >Dislike</span> </div>
             <a href="#">REPLY</a>
         </div>
-        <div class="view-reply">
-            <a href="#">View reply</a>
-        </div>
-       
     </div>
     <div class="triple-dot">
         <span></span><span></span><span></span>

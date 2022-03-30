@@ -1,4 +1,4 @@
-<div id="horizontal-line"></div>
+<!-- <div id="horizontal-line"></div> -->
 
 <div class="play-video">
     <div class="left-container">
@@ -30,10 +30,12 @@
         <div class="channel-details">
             <div class="channel-info">
                 <div class="channel-name">
-                    <img src="/assets/img/image.jpg" alt="">
+                    <div class="image-wrap">
+                        <img src="/assets/img/image.jpg" alt="">
+                    </div>
                     <div class="subscribers">
                         <p>{{video.channelTitle}}</p>
-                        <span>372 subscribers</span>
+                        <small>372 subscribers</small>
                     </div>
                 </div>
             <button class="subs-btn">SUBSCRIBE</button>
@@ -45,7 +47,7 @@
         </div>
         <div class="comment-section desktop-view">
             <div class="top-section">
-                <div>63 Comments</div>
+                <div>{{comments.length}} Comments</div>
                 <div class="sort-by">
                     <div class="span-tags">
                         <span></span>
@@ -57,10 +59,10 @@
             </div>
             <div class="comment-input">
                 <img src="/assets/img/image.jpg" alt="img">
-                <input type="text" placeholder="Commenting publicly as Sam Raj AB">
+                <input type="text" placeholder="Add a comment">
             </div>
-            <div class="comments" *ngFor="let item of array">
-                <app-comments></app-comments>
+            <div class="comments" *ngFor="let comment of comments">
+                <app-comments [commentData]="comment?.snippet.topLevelComment" ></app-comments>
             </div>
         </div>
 
