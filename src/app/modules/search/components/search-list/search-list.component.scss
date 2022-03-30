@@ -30,6 +30,9 @@
     @media screen and (max-width: 768px){
        height: 100%;
        width: 100%;
+       .pop-up-btn{
+            display: none; 
+        }
        .thumbnail{
            .bottom-right{
                bottom: 10px;
@@ -87,8 +90,8 @@
     @media screen and (max-width: 768px){
         width: 40%;
         .thumbnail-img{
-            height: 70%;
-            width: 80%;
+            height: 100%;
+            width: 100%;
         }
         
     }
