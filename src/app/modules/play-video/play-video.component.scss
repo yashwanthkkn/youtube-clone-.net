@@ -272,75 +272,7 @@
 }
 
 
-// .comment-section{
-//     //
-//     margin: 20px 56px;
-//     margin-top: 50px;
-//     // border: 1px solid green;
-//     width: 60%;
-//     .top-section{
-//         display: flex;
-//         align-items: center;
-//       .sort-by{
-//           display: flex;
-//           justify-content: center;
-//           align-items: center;
-//            margin-left: 50px;
-//         p{
-//             margin-left: 20px;
-//         }
-//         .span-tags{
-//             width: 25px;
-//             height: 20px;
-//             display: flex;
-//             flex-direction: column;
-//             gap: 5px;
-//             // border: 1px solid black;
-//             span:first-child{
-//                 width: 20px;
-//                 height: 1px;
-//                 background-color: black;
-//             }
-//             span:nth-child(2){
-//                 width: 15px;
-//                 height: 1px;
-//                 // margin-top: 10px;
-//                 background-color: black;
-//             }
-//             span:last-child{
-//                 width: 10px;
-//                 height: 1px;
-//                 background-color: black;
-//             }
-//         }
-//       }
-        
-//     }
-//     .comment-input{
-//         display: flex;
-//         align-items: center;
-//         margin-top: 20px;
-//         img{
-//             border-radius: 100%;
-//             width: 40px;
-//             height: 40px;
-//         }
-//         input{
-//             width: 90%;
-//             border: none;
-//             border-bottom: 1px solid grey;
-//             // padding-left: 30px;
-//             margin-left: 20px;
-//             outline: none;
-//         }
-        
-//     }
-//     .comments{
-//         display: flex;
-//         flex-direction: column;
-//         gap: 7px ;
-//     }
-// }
+
 
 @media screen and (max-width:980px) {
     .play-video{
@@ -365,23 +297,21 @@
    
         .comment-section{
             width: 100%;
+          
             // margin-left: 50px;
             padding-left: 50px;
             // align-items: center;
             // border: 1px solid black;
-            .comment-input{
-                width: 85%;
-            }
-                margin-top: 20px;
-                width: 100%;
-                .top-section{
+            margin-top: 20px;
+            width: 100%;
+            .top-section{
+                display: flex;
+                align-items: center;
+                .sort-by{
                     display: flex;
+                    justify-content: center;
                     align-items: center;
-                  .sort-by{
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
-                       margin-left: 50px;
+                    margin-left: 50px;
                     p{
                         margin-left: 20px;
                     }
@@ -411,27 +341,46 @@
                     }
                   }
                     
-                }
-                .comment-input{
+            }
+            .comment-input{
+                // border: 1px solid red;
+                width: 85%;
+                // margin-bottom: 500px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 20px;
+                .post-comment{
                     display: flex;
-                    align-items: center;
-                    margin-top: 20px;
+                    width: 90%;
                     img{
                         border-radius: 100%;
                         width: 40px;
                         height: 40px;
                     }
                     input{
-                        width: 90%;
+                        width: 900px;
                         border: none;
                         border-bottom: 1px solid grey;
-                        // padding-left: 30px;
+                        padding-left: 30px;
                         margin-left: 20px;
+                        // padding-bottom: 50px;
+                        // margin-bottom: 30px;
                         outline: none;
                         background: transparent;
                     }
-                    
                 }
+                .post-btn{
+                    border: none;
+                    background-color: $content-background-secondary;
+                    border-radius: 2px;
+                    color: $secondary;
+                    padding: 0.5rem 1rem;
+                    cursor: pointer;
+                }
+                
+                    
+            }
                 .comments{
                     display: flex;
                     flex-direction: column;
@@ -446,18 +395,25 @@
 @media screen and (max-width:600px) {
     .play-video{
         flex-direction: column;
-        margin: 35px 23px;
+        margin: 35px 10px;
+      
         padding-top: 20px;
         // flex-wrap: wrap-reverse;
         .left-container{
             width: 100%;
             .image{
-                height: 300px;
+                height: 250px;
             }
             .video-description{
                 margin-top: 20px;
+                .video-title{
+                    font-weight: 400;
+                }
             }
             .views{
+                p{
+                    display: none;
+                }
                 .likes{
                     width: 90%;
                 }
@@ -468,8 +424,9 @@
             .channel-details{
                 .channel-info{
                     .channel-name{
+                        width: 200px;
                         .subscribers{
-                            margin-left: 30px;
+                            margin-left: 20px;
                         }
                     }
                 }
@@ -488,23 +445,22 @@
         }
     }
     .comment-section{
-        width: 95%;
-        // margin: 0px 10px;
-        padding-left: 10px;
-        .comment-input{
-            width: 85%;
-        }
-
+        width: 100%;
+        padding-left: 20px;
+        // margin-left: 15px;
+        // border: 1px solid black;
         margin-top: 20px;
-            width: 100%;
-            .top-section{
+        // margin-left: 20px;
+        // margin-right: 20px;
+        // width: 100%;
+        .top-section{
+            display: flex;
+            align-items: center;
+            .sort-by{
                 display: flex;
+                justify-content: center;
                 align-items: center;
-              .sort-by{
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                   margin-left: 50px;
+                margin-left: 50px;
                 p{
                     margin-left: 20px;
                 }
@@ -534,26 +490,32 @@
                 }
               }
                 
+        }
+        .comment-input{
+            display: flex;
+            align-items: center;
+            // justify-content: space-around;
+            margin-top: 20px;
+            // border: 1px solid black;
+           // .post-comment{
+            img{
+                border-radius: 100%;
+                width: 40px;
+                height: 40px;
             }
-            .comment-input{
-                display: flex;
-                align-items: center;
-                margin-top: 20px;
-                img{
-                    border-radius: 100%;
-                    width: 40px;
-                    height: 40px;
-                }
                 input{
-                    width: 90%;
-                    border: none;
+                    // width: 90%;
+                    //border: none;
+                    padding-left: 0px;
+                    margin-left: -20px;
                     border-bottom: 1px solid grey;
-                    // padding-left: 30px;
-                    margin-left: 20px;
-                    outline: none;
+                    //outline: none;
                 }
-                
-            }
+           // } 
+           .post-btn{
+               margin-left: 30px;
+           }   
+        }
             .comments{
                 display: flex;
                 flex-direction: column;

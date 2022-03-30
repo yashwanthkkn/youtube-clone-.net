@@ -33,6 +33,22 @@
             margin-top: 5px;
             line-height: 1.25rem;
             word-spacing: 0.1rem;
+            p{
+                height: 40px;
+                // width:0px;
+                overflow: hidden;
+            }
+            .showAll{
+                height: 100%;
+            }
+            .show-light{
+                color: black;
+                padding-top: 5px;
+                font-size: 12px;
+            }
+            .show-light:hover{
+                cursor: pointer;
+            }
         }
         .reaction{
             display: flex;

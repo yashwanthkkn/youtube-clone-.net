@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent implements OnInit {
-
+  toggleDescription:boolean=false;
   constructor() { }
 
 
@@ -22,6 +22,11 @@ export class CommentsComponent implements OnInit {
     if (views >= 1e9 && views < 1e12) return +(views / 1e9).toFixed(1) + "B";
     if (views >= 1e12) return +(views / 1e12).toFixed(1) + "T";
     return views;
+  }
+
+  showAll(){
+    this.toggleDescription = !this.toggleDescription;
+    
   }
 
 }

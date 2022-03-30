@@ -10,8 +10,8 @@
 
 export const environment = {
   production: false,
-  GAPI_CLIENT_ID:"444235117138-qpat7nk99aih9cikiskn12d7etijai5d.apps.googleusercontent.com",
-  GAPI_API_KEY:"AIzaSyARyRvksnQLtmcDSlSfVlXs9EtoUNVgzR8"
+  GAPI_CLIENT_ID:"760016616417-n20hqk91p318m4rdbffqiguq25tjeovk.apps.googleusercontent.com",
+  GAPI_API_KEY:"AIzaSyBWPxoQV1nGn2T1EfAEOu5ZtwuizAR-zF0"
 };
 
 /*
