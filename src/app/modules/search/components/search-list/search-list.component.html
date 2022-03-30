@@ -23,15 +23,14 @@
         <p>{{cardData?.snippet.channelTitle}}</p>
       </div>
       <div class="description">
-        {{cardData?.snippet.description | slice:0:40}}...
+        {{cardData?.snippet.description | slice:0:80}}...
       </div>
     </div>
-    <div class="pop-up-btn" (click)="toggleMenu()"><img src="https://charbase.com/images/glyph/10998" alt="">
-      <div class="pop-up-menu" *ngIf="showMenu === true">
+    <div class="pop-up-btn"><img src="https://charbase.com/images/glyph/10998" alt="">
+      <div class="pop-up-menu">
         <app-popup></app-popup>
       </div> 
     </div>
-    <!-- <div class="pop-up-menu">
-      <app-popup></app-popup>
-    </div> -->
-  </div>
+    
+   </div>
+  

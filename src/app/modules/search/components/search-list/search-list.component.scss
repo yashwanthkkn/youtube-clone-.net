@@ -33,6 +33,7 @@
        .thumbnail{
            .bottom-right{
                bottom: 10px;
+               
            }
        }
        .caption{
@@ -84,30 +85,36 @@
         
     }
     @media screen and (max-width: 768px){
-        width: 100%;
+        width: 40%;
         .thumbnail-img{
-            height: 100%;
-            width: 100%;
+            height: 70%;
+            width: 80%;
         }
+        
     }
     
 }
-
-
 .caption{
     @include display-column();
     justify-content: flex-start;
     margin-top:10px;
     margin-left: 15px;
     height: 23vh;
+    width: 115vh;
+    position: relative;
+   
     @media screen and (max-width: 768px){
         height: 100%;
-        width: 100%;
+        width: 50%;
+        
     }
 }
 .title{
     font-size: 18px;
     margin-bottom: 10px;
+    @media screen and (max-width: 768px){
+        font-size: 10px;
+    }
 }
 .detail{
     font-size: 13px;
@@ -148,5 +155,28 @@
     right: 0;
     img{
         height: 30px;
+        width: 30px;
     }
+
+
+
+
 } 
+.pop-up-btn:hover .pop-up-menu {
+    display: block;
+    z-index: 1;
+    
+}
+.pop-up-menu{
+    display: none;
+    @media screen and (max-width: 768px){
+        z-index: 999;
+        height: 20vh;
+        width: 10vw;
+        .pop-up-btn:hover .caption{
+            z-index: -1;
+        }
+        
+        
+    }
+}

@@ -1,7 +1,7 @@
 @import "/src/_variables.scss";
 
 .home-popup-wrap{
-    height: 190px;
+    height: 185px;
     width: 230px;
     background-color: white;
     border-radius: 5px;
@@ -41,5 +41,13 @@
         margin: 5px 0px;
         border-bottom: 1px solid $content-background-secondary;
     }
-    
+    @media screen and (max-width: 768px){
+        height: 200px;
+        width: 180px;
+        z-index: 3000px;
+        .nav-item{
+            margin: 5px;
+            padding: 5px;
+        }
+    }
 }
