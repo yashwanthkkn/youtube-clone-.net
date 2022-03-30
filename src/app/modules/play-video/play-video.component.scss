@@ -216,6 +216,7 @@
             }
             .comment-input{
                 display: flex;
+                justify-content: space-between;
                 align-items: center;
                 margin-top: 20px;
                 img{
@@ -231,6 +232,18 @@
                     margin-left: 20px;
                     outline: none;
                     background: transparent;
+                }
+                .post-btn{
+                    border: none;
+                    background-color: $content-background-secondary;
+                    border-radius: 2px;
+                    color: $secondary;
+                    padding: 0.5rem 1rem;
+                    cursor: pointer;
+                }
+                .post-comment{
+                    display: flex;
+                    width: 90%;
                 }
                 
             }

@@ -9,6 +9,7 @@ import { FloatNavComponent } from './components/float-nav/float-nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { ExtendedNavComponent } from './components/extended-nav/extended-nav.component';
 import { SafePipe } from './pipes/safe.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SafePipe } from './pipes/safe.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

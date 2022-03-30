@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OauthService } from 'src/app/services/oauth.service';
 import {YoutubeService} from "../../services/youtube.service"
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-play-video',
   templateUrl: './play-video.component.html',
@@ -17,6 +18,11 @@ export class PlayVideoComponent implements OnInit {
 
   videoId :any;
   comments :any[] = []
+
+  commentSnippet = {
+    textOriginal:'',
+    parentId:''
+  }
   video = {
     id:"",
     channelTitle:"",
@@ -28,7 +34,8 @@ export class PlayVideoComponent implements OnInit {
     duration:"",
     publishedAt:"",
     thumbnailsUrl:"",
-    iframeUrl:""
+    iframeUrl:"",
+    channelId:""
   }
 
   relatedVideos : any[] = [];
@@ -41,6 +48,7 @@ export class PlayVideoComponent implements OnInit {
         if(videos.length !== 0){
           this.video.id = videos[0].id;
           this.video.channelTitle = videos[0].snippet.channelTitle;
+          this.video.channelId = videos[0].snippet.channelId;
           this.video.title = videos[0].snippet.title;
           this.video.description =videos[0].snippet.description;
           this.video.thumbnailsUrl = videos[0].snippet.thumbnails.default.url;
@@ -84,6 +92,25 @@ export class PlayVideoComponent implements OnInit {
   showAll(){
     this.toggleDescription = !this.toggleDescription;
     
+  }
+
+  async onSubmit(snippet:any){
+    let form = snippet.value;
+    let snip = {
+        videoId:this.videoId,
+        channelId : this.video.channelId,
+        topLevelComment:{
+          snippet:{
+            textOriginal:form.comment
+          }
+        }
+    } 
+    try{
+      let comment = await this.ytube.addComment(snip)
+      this.comments.unshift(comment)
+    }catch(err){
+      console.log(err);
+    }
   }
 
 }
