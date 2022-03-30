@@ -7,6 +7,8 @@ import { CardComponent } from './components/card/card.component';
 import { HomePopupComponent } from './components/home-popup/home-popup.component';
 import { DateAgoPipe } from 'src/app/pipes/date-ago.pipe';
 
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { DateAgoPipe } from 'src/app/pipes/date-ago.pipe';
   imports: [
     CommonModule,
     HomeRoutingModule,
+    InfiniteScrollModule
   ]
 })
 export class HomeModule { }

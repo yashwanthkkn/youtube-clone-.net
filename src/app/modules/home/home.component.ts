@@ -16,7 +16,9 @@ export class HomeComponent implements OnInit {
   labelWidth: any;
   
   isLoading: boolean = false;
-  videos: any;
+  videos: any = [];
+
+  isInfiniteScroll: boolean = false;
 
   categories: any;
 
@@ -97,6 +99,17 @@ export class HomeComponent implements OnInit {
         }
       )()
     }
+  }
+
+  onScrollDown(e: any){
+    this.isInfiniteScroll = true;
+    setTimeout(()=>{
+      (async()=>{
+        (this.currentCategory == 'All') ? this.videos.push(...await this.api.getVideos('firebase',8)) : this.videos.push(...await this.api.getVideoByCategory(this.currentCategory,8))
+        this.isInfiniteScroll = false;
+      })()
+    },1000)
+      
   }
 
 }

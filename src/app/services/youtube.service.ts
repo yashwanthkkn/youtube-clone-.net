@@ -12,6 +12,8 @@ export class YoutubeService {
     
   }
 
+  pageToken:string = '';
+
 
   async getVideos(searchKey:string = 'random',maxResults:number = 10){
     
@@ -24,7 +26,7 @@ export class YoutubeService {
       mine : false,
       maxResults:maxResults,
       chart:'mostPopular',
-      q:searchKey,
+      nextPageToken:this.pageToken
     }
 
     if(this.authService.isAuthenticated)
@@ -36,7 +38,7 @@ export class YoutubeService {
       'params': params,
       
     });
-    
+    this.pageToken = response.result.nextPageToken;
     videos = response.result.items
     return videos
   }
