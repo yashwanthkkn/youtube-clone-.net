@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   GAPI_CLIENT_ID:"668377165925-oa73fi4lejlqktip10eo3r68inm4oatc.apps.googleusercontent.com",
-  GAPI_API_KEY:"AIzaSyDiKqR1gZxLt1tki9SGTDo_GIwtRRM3-to"
+  GAPI_API_KEY:"AIzaSyAmZikW_8-Zil0RwetxXLVONrYam8QOuXo"
 };
 
 /*
