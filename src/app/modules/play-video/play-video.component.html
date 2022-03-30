@@ -57,10 +57,15 @@
                     <p>SORT BY</p>
                 </div>
             </div>
-            <div class="comment-input">
-                <img src="/assets/img/image.jpg" alt="img">
-                <input type="text" placeholder="Add a comment">
-            </div>
+            <form #snippet="ngForm"  novalidate (ngSubmit)="onSubmit(snippet)" class="comment-input">
+                <div class="post-comment">
+                    <img src="/assets/img/image.jpg" alt="img">
+                    <input name="comment" type="text" [(ngModel)]="commentSnippet.textOriginal" placeholder="Add a Comment">
+                </div>
+                <div>
+                    <button class="post-btn" type="submit">Post</button>
+                </div>
+            </form>
             <div class="comments" *ngFor="let comment of comments">
                 <app-comments [commentData]="comment?.snippet.topLevelComment" ></app-comments>
             </div>
@@ -89,8 +94,13 @@
         </div>
     </div>
     <div class="comment-input">
-        <img src="/assets/img/image.jpg" alt="img">
-        <input type="text" placeholder="Add a Comment">
+        <div>
+            <img src="/assets/img/image.jpg" alt="img">
+            <input type="text" placeholder="Add a Comment">
+        </div>
+        <div>
+            <button class="post-btn">Post</button>
+        </div>
     </div>
     <div class="comments" *ngFor="let comment of comments">
         <app-comments [commentData]="comment?.snippet.topLevelComment"></app-comments>

@@ -249,5 +249,25 @@ export class YoutubeService {
     comments = response.result.items
     return comments
   }
+
+  async addComment(snippet:any){
+    
+    if( ! gapi.client ){
+      await this.authService.loadClient();
+    }
+    let params = {
+      part : 'snippet',
+    }
+    let response = await gapi.client.request({
+      'method': 'POST',
+      'path': '/youtube/v3/commentThreads',
+      'params': params,
+      'body':{
+       snippet:snippet
+      }
+    });
+    console.log(response);
+    return response.result
+  }
 }
 

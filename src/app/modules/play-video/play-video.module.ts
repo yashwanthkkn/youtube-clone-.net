@@ -8,6 +8,7 @@ import { RelatedVideosComponent } from './components/related-videos/related-vide
 import { PopupComponent } from './components/popup/popup.component';
 import { TagsComponent } from './components/tags/tags.component';
 import { SafePipe } from 'src/app/pipes/safe.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { SafePipe } from 'src/app/pipes/safe.pipe';
     SafePipe
   ],
   imports: [
+    FormsModule,
     CommonModule,
     PlayVideoRoutingModule
   ]
