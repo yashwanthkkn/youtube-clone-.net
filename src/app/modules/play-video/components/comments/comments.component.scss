@@ -13,9 +13,13 @@
         margin-left: 20px;
         .commenter-name{
             display: flex;
+            align-items: center;
             gap: 5px;
+            margin-bottom: 0.5rem;
+
             p:first-child{
                 font-weight: bold;
+                font-size: 14px;
             }
             p:nth-child(2){
                 color: #606060;
@@ -23,10 +27,12 @@
         }
         .actual-comment{
             margin-top: 5px;
-            width: 80%;
+            line-height: 1.25rem;
+            word-spacing: 0.1rem;
         }
         .reaction{
             display: flex;
+            align-items: center;
             gap:15px;
             margin-top: 10px;
             font-size: 14px;

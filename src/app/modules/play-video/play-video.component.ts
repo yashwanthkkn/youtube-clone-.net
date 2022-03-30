@@ -16,7 +16,7 @@ export class PlayVideoComponent implements OnInit {
   toggleDescription:boolean=false;
 
   videoId :any;
-
+  comments :any[] = []
   video = {
     id:"",
     channelTitle:"",
@@ -28,7 +28,7 @@ export class PlayVideoComponent implements OnInit {
     duration:"",
     publishedAt:"",
     thumbnailsUrl:"",
-    iframeUrl:""
+    iframeUrl:"#"
   }
 
   relatedVideos : any[] = [];
@@ -53,11 +53,19 @@ export class PlayVideoComponent implements OnInit {
           
         } 
         else{
-          this.router.navigate(['/']);
+          return
+          // this.router.navigate(['/']);
         }
         let relatedVideos = await this.ytube.getRelatedVideo(this.videoId, 15);
         this.relatedVideos = relatedVideos;
-      })()
+      })();
+
+      // fetching comments
+      (async()=>{
+        this.comments = await this.ytube.getComments(this.videoId,20)
+        console.log(this.comments);
+        
+      })();
     });
   }
 
