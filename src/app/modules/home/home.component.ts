@@ -102,13 +102,15 @@ export class HomeComponent implements OnInit {
   }
 
   onScrollDown(e: any){
-    this.isInfiniteScroll = true;
-    setTimeout(()=>{
-      (async()=>{
-        (this.currentCategory == 'All') ? this.videos.push(...await this.api.getVideos('firebase',8)) : this.videos.push(...await this.api.getVideoByCategory(this.currentCategory,8))
-        this.isInfiniteScroll = false;
-      })()
-    },1000)
+    if(!this.isInfiniteScroll){
+      this.isInfiniteScroll = true;
+      setTimeout(()=>{
+        (async()=>{
+          (this.currentCategory == 'All') ? this.videos.push(...await this.api.getVideos('firebase',8)) : this.videos.push(...await this.api.getVideoByCategory(this.currentCategory,8))
+          this.isInfiniteScroll = false;
+        })()
+      },1000)
+    }
       
   }
 

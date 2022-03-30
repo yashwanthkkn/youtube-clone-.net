@@ -26,7 +26,7 @@ export class YoutubeService {
       mine : false,
       maxResults:maxResults,
       chart:'mostPopular',
-      nextPageToken:this.pageToken
+      pageToken:this.pageToken
     }
 
     if(this.authService.isAuthenticated)
@@ -157,6 +157,7 @@ export class YoutubeService {
       maxResults:maxResults,
       q:searchKey,
       type: 'video',
+      pageToken:this.pageToken
     }
 
 
@@ -168,6 +169,7 @@ export class YoutubeService {
     });
     
     videos = response.result.items
+    this.pageToken = response.result.nextPageToken;
     return videos
   }
 
