@@ -453,6 +453,14 @@
                 }
             }
             .channel-details{
+                .channel-info{
+                    .channel-name{
+                        .subscribers{
+                            margin-left: 30px;
+                        }
+                    }
+                }
+                
                 .channel-text{
                     width: 100%;
                     p:nth-child(2){
