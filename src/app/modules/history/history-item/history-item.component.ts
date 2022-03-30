@@ -35,7 +35,6 @@ export class HistoryItemComponent implements OnInit {
     this.video_dis.id = this.video.id;
     this.video_dis.iframeurl = "https://www.youtube.com/embed/"+this.video.id;
     this.video_dis.viewCount = this.video.statistics.viewCount;
-    console.log(this.video_dis)
   }
 
   formatViews(views: string) {

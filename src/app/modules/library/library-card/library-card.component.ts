@@ -10,7 +10,6 @@ export class LibraryCardComponent implements OnInit {
   constructor() { }
   @Input() cardData:any;
   ngOnInit(): void {
-    console.log(this.cardData)
   }
 
 }

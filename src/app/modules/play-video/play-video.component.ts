@@ -62,9 +62,7 @@ export class PlayVideoComponent implements OnInit {
 
       // fetching comments
       (async()=>{
-        this.comments = await this.ytube.getComments(this.videoId,20)
-        console.log(this.comments);
-        
+        this.comments = await this.ytube.getComments(this.videoId,20)        
       })();
     });
   }

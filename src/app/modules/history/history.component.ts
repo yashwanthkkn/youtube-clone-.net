@@ -14,7 +14,6 @@ export class HistoryComponent implements OnInit {
     (async()=>{
       let videos = await  this.ytube.getVideosForHistory("firebase",8);
       this.video=videos;
-      console.log(videos);
     })()
   }
 
