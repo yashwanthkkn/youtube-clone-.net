@@ -8,7 +8,15 @@
         <div [ngClass]="isLabelRightScrollable ? 'arrow-active' : ''" class="label-item right-arrow" (click)="scroll('right')"><i class="fas fa-angle-right"></i></div>
     </div>
 
-    <div class="view-grid">
+    <div class="view-grid" *ngIf="!isLoading; else loading">
         <home-card *ngFor="let cardData of videos" [cardData]="cardData"></home-card>
     </div>
+    <ng-template #loading>
+        <div class="view-grid is-loading">
+            <home-card></home-card>
+            <home-card></home-card>
+            <home-card></home-card>
+            <home-card></home-card>
+        </div>
+    </ng-template>
 </div>

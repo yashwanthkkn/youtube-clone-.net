@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
 
   labelScrollWidth: any;
   labelWidth: any;
-
+  
+  isLoading: boolean = false;
   videos: any;
 
   categories: any;
@@ -28,9 +29,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.isLoading = true;
+  
     (async()=>{
       this.videos = await this.api.getVideos('firebase',8); 
       this.categories = await this.api.getVideoCategories();
+      this.isLoading = false;
     })()
 
     setTimeout(()=>{
@@ -83,10 +87,13 @@ export class HomeComponent implements OnInit {
 
   selectCategory(category: string, id: any) {
     if(category != this.currentCategory) {
+      this.isLoading = true;
       this.currentCategory = category;
+      this.videos = [];
       (
         async()=>{
           (this.currentCategory == 'All') ? this.videos = await this.api.getVideos('firebase',8) : this.videos = await this.api.getVideoByCategory(category,8);
+          this.isLoading = false;
         }
       )()
     }
