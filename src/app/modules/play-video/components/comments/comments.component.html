@@ -1,18 +1,20 @@
 
 <div class="comment">
-    <img src="{{commentData?.snippet.authorProfileImageUrl}}" alt="" srcset="">
-    <div class="comment-text">
-        <div class="commenter-name">
-            <p>{{commentData?.snippet.authorDisplayName}}</p>
-            <small>{{commentData?.snippet.publishedAt | date:'mediumDate'}}</small>
-        </div>
-        <div class="actual-comment">
-            {{commentData?.snippet.textDisplay}}
-        </div>
-        <div class="reaction">
-            <div class="tooltip"><i class="fal fa-thumbs-up" ></i>{{commentData?.snippet.likeCount}}<span class="tooltiptext">Like</span></div>
-            <div class="tooltip"><i class="fal fa-thumbs-down" ></i> <span class="tooltiptext" >Dislike</span> </div>
-            <a href="#">REPLY</a>
+    <div class="comment-wrap">
+        <img src="{{commentData?.snippet.authorProfileImageUrl}}" alt="" srcset="">
+        <div class="comment-text">
+            <div class="commenter-name">
+                <p>{{commentData?.snippet.authorDisplayName}}</p>
+                <small>{{commentData?.snippet.publishedAt | date:'mediumDate'}}</small>
+            </div>
+            <div class="actual-comment">
+                {{commentData?.snippet.textDisplay}}
+            </div>
+            <div class="reaction">
+                <div class="tooltip"><i class="fal fa-thumbs-up" ></i>{{commentData?.snippet.likeCount}}<span class="tooltiptext">Like</span></div>
+                <div class="tooltip"><i class="fal fa-thumbs-down" ></i> <span class="tooltiptext" >Dislike</span> </div>
+                <a href="#">REPLY</a>
+            </div>
         </div>
     </div>
     <div class="triple-dot">

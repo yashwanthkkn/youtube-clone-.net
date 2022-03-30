@@ -1,4 +1,4 @@
-<div class="library-card" *ngIf="cardData!==undefined; else noData">
+<a class="library-card" *ngIf="cardData!==undefined; else noData" routerLink="/playVideo/{{cardData?.id}}">
     <div class="library-image-container">
         <img src="{{ cardData?.snippet.thumbnails.medium.url }}" alt="thumbnail">
     </div>
@@ -17,7 +17,7 @@
         </div>
         <small>72k views <span>7 days ago</span></small>
     </div>
-</div>
+</a>
 <ng-template #noData>
     <div class="library-card is-loading">
         <div class="library-image-container">
