@@ -6,11 +6,11 @@
     margin: 10px;
 
     .thumbnail{
-        width: inherit;
+        width: 100%;
         height: 150px;
 
         .img{
-            width: inherit;
+            width: 100%;
             height: inherit;
         }
         @media (max-width: 768px){
