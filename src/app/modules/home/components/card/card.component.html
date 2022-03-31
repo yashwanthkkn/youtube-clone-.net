@@ -1,7 +1,11 @@
-<div class="home-card" *ngIf="cardData !== undefined; else noData"  routerLink="/playVideo/{{id}}">
-    <div class="thumbnail">
-        <img src="{{ cardData?.snippet.thumbnails.medium.url }}" alt="img" class="img">
-        <iframe  [src]="iframeURL +'?autoplay=1&mute=1' | home"
+<div class="home-card" 
+    *ngIf="cardData !== undefined; else noData"  
+    routerLink="/playVideo/{{id}}"
+    [ngClass]="{'expand':expandCard == true}"
+    >
+    <div class="thumbnail" (mouseover)="expand()" (mouseout)="withdraw()" >
+        <img src="{{ cardData?.snippet.thumbnails.medium.url }}" alt="img" class="img" >
+        <iframe  [src]="iframeURL +'?autoplay=1&controls=0&mute=1&showinfo=0&autohide=1&modestbranding=1' | home"
             frameborder="0" allow="accelerometer; autoplay *; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
     </div>
     <div class="info">

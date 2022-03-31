@@ -11,6 +11,28 @@ export class CardComponent implements OnInit {
   id: string = '';
   iframeURL:string =''
   constructor() {}
+  showIframe:boolean = false
+  expandCard:boolean = false;
+  expand(){
+    this.showIframe = true
+    console.log('Hover');
+    
+    setTimeout(()=>{
+      if(this.showIframe){
+        // still hovering - add that class
+        // console.log('Still in ..so display');
+        this.expandCard = true
+      }else{
+        this.expandCard = false
+      }
+    },2000)
+  }
+
+  withdraw(){
+    // console.log('Withdrew');
+    this.expandCard = false
+    this.showIframe = false
+  }
 
   ngOnInit(): void {
     if(this.cardData!==undefined){
