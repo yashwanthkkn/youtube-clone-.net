@@ -15,4 +15,8 @@ export class VideoItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getObjectLength(obj : any){
+    return Object.keys(obj).length;
+  }
+
 }

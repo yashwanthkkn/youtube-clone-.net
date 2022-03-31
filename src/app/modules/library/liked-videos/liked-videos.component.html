@@ -1,68 +1,75 @@
 <div class="liked-videos" id="like-video" infinite-scroll (scrolled)="onScrollDown($event)">
-    <div class="liked-videos-info" *ngIf="!isLoading">
-        <div class="img">
-            <img src={{videos[0].snippet.thumbnails.medium.url}} alt="">
-            <p>Play All</p>
+    <ng-container *ngIf="videos.length > 0; else noVideos">
+        <div class="liked-videos-info" *ngIf="!isLoading">
+            <div class="img">
+                <img src={{videos[0].snippet.thumbnails.medium.url}} alt="">
+                <p>Play All</p>
+            </div>
+            <div class="title">
+                <p>Liked Videos</p>
+            </div>
+            <div class="stats">
+                <span class="video-count">
+                    {{ videoData.pageInfo.totalResults }} videos
+                </span>
+                <span class="spacer">
+                    •
+                </span>
+                <span>
+                    0 views
+                </span>
+                <span class="spacer">
+                    •
+                </span>
+                <span>
+                    Updated Today
+                </span>
+            </div>
+            <div class="playlist-type">
+                <span>
+                    <i class="fal fa-lock-alt"></i>
+                </span>
+                <span>
+                    Playlist
+                </span>
+            </div>
+            <div class="option-icons">
+                <span>
+                    <i class="fal fa-random"></i>
+                </span>
+                <span>
+                    <i class="fal fa-ellipsis-h"></i>
+                </span>
+            </div>
+            <hr>
+            <div class="user-detail">
+                <img src="{{authService.authUser.url}}" class="profile-img" alt="">
+                <p>{{ authService.authUser.name }}</p>
+            </div>
         </div>
-        <div class="title">
-            <p>Liked Videos</p>
-        </div>
-        <div class="stats">
-            <span class="video-count">
-                {{ videos.length }} videos
-            </span>
-            <span class="spacer">
-                •
-            </span>
-            <span>
-                0 views
-            </span>
-            <span class="spacer">
-                •
-            </span>
-            <span>
-                Updated Today
-            </span>
-        </div>
-        <div class="playlist-type">
-            <span>
-                <i class="fal fa-lock-alt"></i>
-            </span>
-            <span>
-                Playlist
-            </span>
-        </div>
-        <div class="option-icons">
-            <span>
-                <i class="fal fa-random"></i>
-            </span>
-            <span>
-                <i class="fal fa-ellipsis-h"></i>
-            </span>
-        </div>
-        <hr>
-        <div class="user-detail">
-            <img src="{{authService.authUser.url}}" class="profile-img" alt="">
-            <p>{{ authService.authUser.name }}</p>
-        </div>
-    </div>
-    <div class="liked-videos-list">
-        <ng-container *ngIf="!isLoading; else loading">
-            <ng-container *ngFor="let video of videos; let i = index">
-                <app-video-item [video]="video" [index]="i"></app-video-item>
+        <div class="liked-videos-list">
+            <ng-container *ngIf="!isLoading; else loading">
+                <ng-container *ngFor="let video of videos; let i = index">
+                    <app-video-item [video]="video" [index]="i"></app-video-item>
+                </ng-container>
             </ng-container>
-        </ng-container>
-        <ng-template #loading>
-            <app-video-item></app-video-item>
-            <app-video-item></app-video-item>
-            <app-video-item></app-video-item>
-            <app-video-item></app-video-item>
-        </ng-template>
-        <ng-container *ngIf="isInfiniteScroll">
-            <app-video-item></app-video-item>
-            <app-video-item></app-video-item>
-            <app-video-item></app-video-item>
-            <app-video-item></app-video-item>
-        </ng-container>
-    </div>
+            <ng-template #loading>
+                <app-video-item></app-video-item>
+                <app-video-item></app-video-item>
+                <app-video-item></app-video-item>
+                <app-video-item></app-video-item>
+            </ng-template>
+            <ng-container *ngIf="isInfiniteScroll">
+                <app-video-item></app-video-item>
+                <app-video-item></app-video-item>
+                <app-video-item></app-video-item>
+                <app-video-item></app-video-item>
+            </ng-container>
+        </div>
+    </ng-container>
+    <ng-template #noVideos>
+        <div class="no-videos">
+            <p>No videos in the Playlist</p>
+        </div>
+    </ng-template>
 </div>

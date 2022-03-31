@@ -11,7 +11,11 @@ export class LikedVideosComponent implements OnInit {
 
   videos: any = [];
 
+  videoData: any = [];
+
   isLoading: boolean = false;
+  
+  nextPageToken: string = '';
 
   isInfiniteScroll: boolean = false;
 
@@ -24,22 +28,27 @@ export class LikedVideosComponent implements OnInit {
     this.isLoading = true;
     (
       async () => {
-        this.videos = await this.YtSerivce.getVideos('firebase', 8)
+        this.videoData = await this.YtSerivce.getPlaylists('LL', 8, '')
+        this.nextPageToken = this.videoData.nextPageToken
+        this.videos = this.videoData.items;
         this.isLoading = false;
       }
     )()
   }
 
   onScrollDown(e: any){
-    if(!this.isInfiniteScroll){
-      this.isInfiniteScroll = true;
-      setTimeout(()=>{
-        (async()=>{
-          this.videos.push(...await this.YtSerivce.getVideos('firebase',8));
-          this.isInfiniteScroll = false;
-        })()
-      },1000)
-    }
+    if(this.nextPageToken)
+      if(!this.isInfiniteScroll){
+        this.isInfiniteScroll = true;
+        setTimeout(()=>{
+          (async()=>{
+            this.videoData = await this.YtSerivce.getPlaylists('LL', 8, this.nextPageToken);
+            this.videos.push(...this.videoData.items);
+            this.nextPageToken = this.videoData.nextPageToken;
+            this.isInfiniteScroll = false;
+          })()
+        },1000)
+      }
       
   }
 
