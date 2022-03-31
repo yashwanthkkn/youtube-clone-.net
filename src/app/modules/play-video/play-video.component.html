@@ -5,7 +5,7 @@
         <div class="left-video image">
             <!-- <img src={{video.thumbnailsUrl}} alt="img" srcset="" /> -->
             <!-- <iframe [src]="video.iframeUrl | safe" frameborder="0"></iframe> -->
-            <iframe *ngIf="video.iframeUrl" [src]="video.iframeUrl | safe" 
+            <iframe *ngIf="video.iframeUrl" [src]="video.iframeUrl+'?autoplay=1' | safe" 
             title={{video.title}} frameborder="0" allow="accelerometer; autoplay *; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="video-description">

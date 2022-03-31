@@ -8,6 +8,8 @@ import { LibraryHeaderComponent } from './library-header/library-header.componen
 import { LikedVideosComponent } from './liked-videos/liked-videos.component';
 import { VideoItemComponent } from './liked-videos/video-item/video-item.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { WatchLaterComponent } from './watch-later/watch-later.component';
+import { WatchLaterVideoItemComponent } from './watch-later/video-item/video-item.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     LibraryCardComponent,
     LibraryHeaderComponent,
     LikedVideosComponent,
-    VideoItemComponent
+    VideoItemComponent,
+    WatchLaterComponent,
+    WatchLaterVideoItemComponent
   ],
   imports: [
     CommonModule,
