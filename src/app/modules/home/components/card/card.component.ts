@@ -9,15 +9,20 @@ export class CardComponent implements OnInit {
   @Input() cardData : any;
 
   id: string = '';
+  iframeURL:string =''
   constructor() {}
 
   ngOnInit(): void {
     if(this.cardData!==undefined){
       if(typeof this.cardData.id == 'string'){
         this.id = this.cardData.id;
+        this.iframeURL ="https://www.youtube.com/embed/"+this.id
+
       }
       else if(typeof this.cardData.id == 'object'){
         this.id = this.cardData.id.videoId;
+        this.iframeURL ="https://www.youtube.com/embed/"+this.id
+
       }
     }
   }
