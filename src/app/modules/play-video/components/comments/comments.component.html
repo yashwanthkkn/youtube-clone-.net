@@ -8,7 +8,8 @@
                 <small>{{commentData?.snippet.publishedAt | date:'mediumDate'}}</small>
             </div>
             <div class="actual-comment">
-                {{commentData?.snippet.textDisplay}}
+                <p [ngClass]="toggleDescription ? 'showAll' : '' " > {{commentData?.snippet.textDisplay}}</p>
+                <p class="show-light" (click)="showAll()">SHOW {{toggleDescription ? 'LESS' : 'MORE'}}</p>
             </div>
             <div class="reaction">
                 <div class="tooltip"><i class="fal fa-thumbs-up" ></i>{{commentData?.snippet.likeCount}}<span class="tooltiptext">Like</span></div>

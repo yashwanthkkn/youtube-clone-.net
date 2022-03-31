@@ -5,11 +5,13 @@
     height: 100%;
     .thumbnail{
         width: 100%;
+        
         height: auto;
 
         .img{
             width: 100%;
             height: inherit;
+
         }
         @media (max-width: 768px){
             height: 180px;
