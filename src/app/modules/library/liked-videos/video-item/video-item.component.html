@@ -1,0 +1,33 @@
+<div class="video-item" *ngIf="video !== undefined; else noVideo" routerLink="/playVideo/{{video?.id}}">
+    <div class="count">
+        <p>{{ index + 1 }}</p>
+    </div>
+    <div class="video-info">
+        <div class="video-thumbnail">
+            <img width="120" height="67" src="{{ video.snippet.thumbnails.medium.url }}" alt="">
+        </div>
+        <div class="video-details">
+            <p class="title">{{ video.snippet.title }}</p>
+            <p class="channel-name">{{ video.snippet.channelTitle }}</p>
+        </div>
+    </div>
+    <div class="hover-menu">
+        <i class="fal fa-ellipsis-v"></i>
+    </div>
+</div>
+<ng-template #noVideo>
+    <div class="video-item is-loading">
+        <div class="count">
+        </div>
+        <div class="video-info">
+            <div class="video-thumbnail">
+                
+            </div>
+            <div class="video-details">
+                
+            </div>
+        </div>
+        <div class="hover-menu">
+        </div>
+    </div>
+</ng-template>

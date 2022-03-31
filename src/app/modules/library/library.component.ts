@@ -30,7 +30,7 @@ export class LibraryComponent implements OnInit {
     {
       icon:"fas fa-clock",
       title:"Watch later",
-      link:"history"
+      link:"library/watch-later"
     },
     {
       icon:"far fa-photo-video",
@@ -40,7 +40,7 @@ export class LibraryComponent implements OnInit {
     {
       icon:"fa fa-thumbs-up",
       title:"Liked video 5",
-      link:"history"
+      link:"library/likes"
     }
   ]
 
