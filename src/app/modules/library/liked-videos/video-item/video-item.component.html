@@ -1,14 +1,15 @@
-<div class="video-item" *ngIf="video !== undefined; else noVideo" routerLink="/playVideo/{{video?.id}}">
+<div class="video-item" *ngIf="video !== undefined; else noVideo" routerLink="/playVideo/{{video?.snippet.resourceId.videoId}}">
     <div class="count">
         <p>{{ index + 1 }}</p>
     </div>
     <div class="video-info">
         <div class="video-thumbnail">
-            <img width="120" height="67" src="{{ video.snippet.thumbnails.medium.url }}" alt="">
+            <img width="120" height="67" *ngIf="getObjectLength(video.snippet.thumbnails) > 0" src="{{ video.snippet.thumbnails.medium.url }}" alt="">
+            <img width="120" height="67" *ngIf="getObjectLength(video.snippet.thumbnails) === 0" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN8XA8AAksBZG7LpHYAAAAASUVORK5CYII=" alt="">
         </div>
         <div class="video-details">
             <p class="title">{{ video.snippet.title }}</p>
-            <p class="channel-name">{{ video.snippet.channelTitle }}</p>
+            <p class="channel-name">{{ video.snippet.videoOwnerChannelTitle }}</p>
         </div>
     </div>
     <div class="hover-menu">

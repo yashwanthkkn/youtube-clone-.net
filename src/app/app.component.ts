@@ -1,6 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ExtendedNavComponent } from './components/extended-nav/extended-nav.component';
-import { NavigationStart, Router } from '@angular/router';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 
 @Component({
@@ -8,7 +8,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
   hasVideoView = false;
 
@@ -29,6 +29,14 @@ export class AppComponent {
     })
   }
 
+  ngOnInit(){
+      this.router.events.subscribe((event) => {
+        if (!(event instanceof NavigationEnd)) {
+            return;
+        }
+        window.scrollTo(0, 0)
+    });
+  }
 
   extend(){
     this.extNav?.extend();

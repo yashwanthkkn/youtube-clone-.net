@@ -271,5 +271,33 @@ export class YoutubeService {
     console.log(response);
     return response.result
   }
+
+  async getPlaylists(playlistId:string = 'LL',maxResults:number = 10,pageToken:string = ''){
+    
+    if( ! gapi.client ){
+      await this.authService.loadClient();
+    }
+    let videos: never[] = [];
+    let params = {
+      part : 'contentDetails,status,id,snippet',
+      mine : false,
+      maxResults:maxResults,
+      playlistId:playlistId,
+      pageToken:pageToken
+    }
+
+    if(this.authService.isAuthenticated)
+      params.mine = true;
+    
+    let response = await gapi.client.request({
+      'method': 'GET',
+      'path': '/youtube/v3/playlistItems',
+      'params': params,
+      
+    });
+    videos = response.result
+    return videos
+  }
+
 }
 
