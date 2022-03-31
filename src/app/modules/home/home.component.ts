@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
     this.isLoading = true;
   
     (async()=>{
-      // this.videos = await this.api.getVideos('firebase',8); 
+      this.videos = await this.api.getVideos('firebase',8); 
       this.categories = await this.api.getVideoCategories();
       this.isLoading = false;
     })()
