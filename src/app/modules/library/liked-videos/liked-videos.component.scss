@@ -1,0 +1,92 @@
+@import '/src/_variables.scss';
+
+.liked-videos{
+    display: flex;
+    .liked-videos-info{
+        position: fixed;
+        height: 100%;
+        width: 360px;
+        padding: 30px 30px 10px 30px;
+        background-color: $content-background;
+        overflow: auto;
+        .img{
+            position: relative;
+            img{
+                width: 100%;
+                height: auto;
+            }
+            p{
+                cursor: pointer;
+                position: absolute;
+                bottom: 4px;
+                padding: 10px 15px;
+                text-align: center;
+                width: 100%;
+                text-transform: uppercase;
+                color: white;
+                background-color: rgba(0,0,0,0.8);
+            }
+        }
+        .title p{
+            font-size: 22px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .stats{
+            font-size: 14px;
+            color: #606060;
+        }
+        .playlist-type{
+            margin-top: 15px;
+            background-color: rgba(0, 0, 0, 0.05);
+            display: inline-block;
+            font-size: 14px;
+            padding: 5px 10px;
+            color: #606060;
+        }
+        .option-icons{
+            margin-top: 20px;
+            font-size: 20px;
+            i{
+                margin-right: 25px;
+                cursor: pointer;
+            }
+        }
+        .user-detail{
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            img{
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                margin-right: 15px;
+            }
+            p{
+                font-size: 14px;
+                font-weight: bold;
+            }
+        }
+        hr{
+            margin-top: 15px;
+        }
+    }
+    .liked-videos-list{
+        padding-left: 360px;
+        padding-top: 20px;
+        height: 100%;
+        width: 100%;
+        background-color: $content-background-secondary;
+        min-height: 100vh;
+    }
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        .liked-videos-info{
+            position: unset;
+            width: 100%;
+        }
+        .liked-videos-list{
+            padding-left: 0;
+        }
+    }
+}

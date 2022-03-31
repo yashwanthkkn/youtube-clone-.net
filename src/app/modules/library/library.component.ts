@@ -40,7 +40,7 @@ export class LibraryComponent implements OnInit {
     {
       icon:"fa fa-thumbs-up",
       title:"Liked video 5",
-      link:"history"
+      link:"library/likes"
     }
   ]
 
