@@ -1,5 +1,4 @@
 .library-card{
-    width: 200px;
     font-size: 14px;
     margin-top: 10px;
     height: 230px;
@@ -74,11 +73,5 @@
             background-position-x: -200%;
         }
     }   
-}
-
-@media screen and (max-width:880px) {
-    .library-card{
-        width: 200px;
-    }
 }
 
