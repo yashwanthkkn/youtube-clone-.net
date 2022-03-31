@@ -37,7 +37,7 @@ export class LikedVideosComponent implements OnInit {
   }
 
   onScrollDown(e: any){
-    if(this.nextPageToken !== "")
+    if(this.nextPageToken)
       if(!this.isInfiniteScroll){
         this.isInfiniteScroll = true;
         setTimeout(()=>{
