@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
 
     setTimeout(()=>{
       this.labelScrollEvents();
-    },1000)
+    },3000)
   }
 
   scroll(direction: string){

@@ -94,12 +94,14 @@
     }
 }
 
-
 .home-menu-icon i{
-    color: $content-background;
+    color: #f9f9f9;
 }
 .home-card:hover {
     cursor: pointer;
+    .home-menu-icon i{
+        color: $primary;
+    }
 }
 
 .popup{
@@ -176,7 +178,7 @@
         }
     }
     .home-menu-icon i{
-        color: $primary;
+        color: #f9f9f9;
     }
     transform-origin: 20px 10px;
     // margin-left: -50px;
@@ -265,3 +267,4 @@
         }
     }   
 }
+
