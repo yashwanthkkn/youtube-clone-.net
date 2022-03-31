@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OauthService } from 'src/app/services/oauth.service';
 import {YoutubeService} from "../../services/youtube.service"
 import { NgForm } from '@angular/forms';
+import { SubscriptionService } from 'src/app/services/subscription.service';
 @Component({
   selector: 'app-play-video',
   templateUrl: './play-video.component.html',
@@ -11,7 +12,9 @@ import { NgForm } from '@angular/forms';
 export class PlayVideoComponent implements OnInit {
   loader:boolean = false;
 
-  constructor(private ytube : YoutubeService,private router: Router, private route: ActivatedRoute,private oauth: OauthService) { }
+  constructor(private ytube : YoutubeService,
+    private router: Router, private route: ActivatedRoute,
+    public oauth: OauthService, private subsService: SubscriptionService) { }
   array:number[] = [1,2,3,4,5,6,7,8,9,10]
 
   toggleDescription:boolean=false;
@@ -75,6 +78,9 @@ export class PlayVideoComponent implements OnInit {
     });
   }
 
+  async subscribe(){
+    await this.subsService.addSubscriptions(this.video.channelId);
+  }
   numberWithCommas(x :any) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }

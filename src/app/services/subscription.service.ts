@@ -54,4 +54,33 @@ export class SubscriptionService {
     subscriptions = response.result.items
     return subscriptions
   }
+
+  async addSubscriptions(channelId:string) {
+    if( ! gapi.client ){
+      await this.authService.loadClient();
+    }
+    let params = {
+      part : 'snippet',
+    }
+    let body = {
+      snippet:{
+        resourceId:{
+          channelId:channelId
+        }
+      }
+    }
+
+    if(!this.authService.isAuthenticated){
+      return
+    }
+    
+    let response = await gapi.client.request({
+      'method': 'POST',
+      'path': '/youtube/v3/subscriptions',
+      'params': params,
+      'body':body
+    });
+    // subscriptions = response.result.items
+    this.subscriptions.unshift(response.result)
+  }
 }
