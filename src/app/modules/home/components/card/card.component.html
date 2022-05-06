@@ -1,6 +1,6 @@
 <div class="home-card" 
     *ngIf="cardData !== undefined; else noData"  
-    routerLink="/playVideo/{{cardData?.id}}"
+    routerLink="/playVideo/{{cardData?.videoId}}"
     [ngClass]="{'expand':expandCard == true}"
     >
     <!-- <div class="thumbnail" (mouseover)="expand()" (mouseout)="withdraw()" > -->
