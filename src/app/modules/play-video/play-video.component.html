@@ -20,8 +20,10 @@
                         <div class="tooltiptext">share</div> </div>
                     <div class="tooltip"><i class="fal fa-cut"></i> CLIP
                         <div class="tooltiptext">clip</div> </div>
-                    <div class="tooltip"><i class="fal fa-save"></i>SAVE
-                        <div class="tooltiptext">save</div> </div>
+                    <div class="tooltip">
+                        <i class="fal fa-save"></i>SAVE
+                        <div class="tooltiptext">save</div> 
+                    </div>
                     <div>...</div>
                 </div>
             </div>
@@ -38,7 +40,13 @@
                         <small>372 subscribers</small>
                     </div>
                 </div>
-            <button class="subs-btn">SUBSCRIBE</button>
+                <button class="subs-btn" *ngIf="oauth.isAuthenticated" (click) = 'subscribe()'>SUBSCRIBE</button>
+                <button class="subs-btn" *ngIf="!oauth.isAuthenticated" >
+                    <div class="tooltip">
+                        Subscribe
+                        <div class="tooltiptext">Please Login</div> 
+                    </div>
+                </button>
             </div>
             <div class="channel-text" >
                 <p [ngClass]="toggleDescription ? 'showAll' : '' " >{{video.description}}</p>
@@ -63,7 +71,7 @@
                     <input name="comment" type="text" [(ngModel)]="commentSnippet.textOriginal" placeholder="Add a Comment">
                 </div>
                 <div>
-                    <button class="post-btn" type="submit">Post</button>
+                    <button class="post-btn" type="submit" [disabled]="!oauth.isAuthenticated">Post</button>
                 </div>
             </form>
             <div class="comments" *ngFor="let comment of comments">

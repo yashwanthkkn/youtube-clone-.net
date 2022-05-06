@@ -35,38 +35,41 @@
             <div class="nav-icon"><i class="fas fa-photo-video"></i></div>
             <div class="nav-text">Subscriptions</div>
         </a>
-        <a class="nav-item" routerLink="/history">
+        <a class="nav-item" routerLink="/library/likes">
             <div class="nav-icon"><i class="fas fa-thumbs-up"></i></div>
             <div class="nav-text">Liked Videos</div>
         </a>
         
+        <div class="line" *ngIf="authService.isAuthenticated"></div>
+        
+        <div class="title" *ngIf="authService.isAuthenticated">SUBSCRIPTIONS</div>
+
+        <div *ngIf="authService.isAuthenticated">   
+            <a  *ngFor="let sub of subsService.subscriptions" class="nav-item" routerLink="/home">
+                <div class="nav-icon"><img src="{{sub.snippet.thumbnails.default.url}}" class="sub-img" alt=""></div>
+                <div class="nav-text">{{sub.snippet.title}}</div>
+            </a>
+        </div>
+        
         <div class="line"></div>
         
-        <div class="title">SUBSCRIPTIONS</div>
-        
+        <div class="title">MORE FROM YOUTUBE</div>
+ 
         <a class="nav-item" routerLink="/home">
-            <div class="nav-icon"><i class="fas fa-home"></i></div>
-            <div class="nav-text">Your Videos</div>
+            <div class="nav-icon"><i class="fas fa-cog"></i></div>
+            <div class="nav-text">Settings</div>
         </a>
         <a class="nav-item" routerLink="/home">
-            <div class="nav-icon"><i class="fas fa-compass"></i></div>
-            <div class="nav-text">Watch Later</div>
+            <div class="nav-icon"><i class="fas fa-flag"></i></div>
+            <div class="nav-text">Report History</div>
         </a>
         <a class="nav-item" routerLink="/library">
-            <div class="nav-icon"><i class="fas fa-photo-video"></i></div>
-            <div class="nav-text">Subscriptions</div>
+            <div class="nav-icon"><i class="fas fa-question"></i></div>
+            <div class="nav-text">Help</div>
         </a>
         <a class="nav-item" routerLink="/history">
-            <div class="nav-icon"><i class="fas fa-home"></i></div>
-            <div class="nav-text">Liked Videos</div>
-        </a>
-        <a class="nav-item" routerLink="/library">
-            <div class="nav-icon"><i class="fas fa-photo-video"></i></div>
-            <div class="nav-text">Subscriptions</div>
-        </a>
-        <a class="nav-item" routerLink="/history">
-            <div class="nav-icon"><i class="fas fa-home"></i></div>
-            <div class="nav-text">Liked Videos</div>
+            <div class="nav-icon"><i class="far fa-sticky-note"></i></div>
+            <div class="nav-text">Feedback</div>
         </a>
     </div>
 </div>

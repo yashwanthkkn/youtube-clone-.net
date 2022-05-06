@@ -67,6 +67,7 @@ export class OauthService {
 
   signOut(){
     return new Promise((resolve,reject)=>{
+      this.GoogleAuth.signOut();
       this.isAuthenticated = false;
       this.authUser = {
         name:'',

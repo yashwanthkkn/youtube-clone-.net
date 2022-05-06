@@ -1,10 +1,19 @@
-<a class="home-card" *ngIf="cardData !== undefined; else noData"  routerLink="/playVideo/{{cardData?.id}}">
-    <div class="thumbnail">
-        <img src="{{ cardData?.imageUrl }}" width="120" height="90" alt="img" class="img">
+<div class="home-card" 
+    *ngIf="cardData !== undefined; else noData"  
+    routerLink="/playVideo/{{cardData?.id}}"
+    [ngClass]="{'expand':expandCard == true}"
+    >
+    <!-- <div class="thumbnail" (mouseover)="expand()" (mouseout)="withdraw()" > -->
+        <div class="thumbnail" >
+        <img src="{{ cardData?.ImageUrl }}" alt="img" class="img" >
+        <!-- <iframe  [src]="iframeURL +'?autoplay=1&controls=0&mute=1&showinfo=0&autohide=1&modestbranding=1' | home"
+            frameborder="0" allow="accelerometer; autoplay *; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe> -->
     </div>
     <div class="info">
         <div class="logo">
-            <img src="{{ cardData?.imageUrl }}" class="logo-img" alt="">
+            <div class="logo-img-container">
+                <img src="{{ cardData?.ImageUrl }}" class="logo-img" alt="">
+            </div>
         </div>
         <div class="info-wrap">
             <div class="desc-wrap">
@@ -21,7 +30,45 @@
             <div class="meta">74K views . {{cardData?.uploadedAt | dateAgo}}</div>
         </div>
     </div>
-</a>
+    <div class="btn">
+        <button>Watch later</button>
+        <button>Add to Queue</button>
+    </div>
+    
+</div>
+
+<!-- <div class="hover-on-card">
+    <div class="iframe-link">
+         <img src="{{ cardData?.snippet.thumbnails.medium.url }}" alt="img" class="img">
+        <img src="assets/img/image.jpg" alt="img" class="img">
+    </div>
+    <div class="info">
+        <div class="logo">
+         <img src="{{ cardData?.snippet.thumbnails.default.url }}" class="logo-img" alt=""> 
+            <img src="assets/img/image.jpg" class="logo-img" alt="">
+        </div>
+        <div class="info-wrap">
+            <div class="desc-wrap">
+                <div class="desc">{{cardData?.snippet.title | slice:0:40}}...</div>
+                <div class="home-menu-icon">
+                    <i class="fas fa-ellipsis-v"></i>
+                    <div class="popup">
+                       
+                        <app-home-popup ></app-home-popup>
+                    </div>
+                </div>
+            </div>
+            <div class="channel">{{cardData?.snippet.channelTitle}}</div>
+            <div class="meta">74K views . {{cardData?.snippet.publishedAt | dateAgo}}</div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button>Watch later</button>
+        <button>Add to Queue</button>
+    </div>
+</div> -->
+
+
 <ng-template #noData>
     <div class="home-card is-loading">
         <div class="thumbnail">
