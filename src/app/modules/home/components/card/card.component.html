@@ -1,14 +1,14 @@
-<a class="home-card" *ngIf="cardData !== undefined; else noData"  routerLink="/playVideo/{{id}}">
+<a class="home-card" *ngIf="cardData !== undefined; else noData"  routerLink="/playVideo/{{cardData?.id}}">
     <div class="thumbnail">
-        <img src="{{ cardData?.snippet.thumbnails.medium.url }}" alt="img" class="img">
+        <img src="{{ cardData?.imageUrl }}" width="120" height="90" alt="img" class="img">
     </div>
     <div class="info">
         <div class="logo">
-            <img src="{{ cardData?.snippet.thumbnails.default.url }}" class="logo-img" alt="">
+            <img src="{{ cardData?.imageUrl }}" class="logo-img" alt="">
         </div>
         <div class="info-wrap">
             <div class="desc-wrap">
-                <div class="desc">{{cardData?.snippet.title | slice:0:40}}...</div>
+                <div class="desc">{{cardData?.title | slice:0:40}}...</div>
                 <div class="home-menu-icon">
                     <i class="fas fa-ellipsis-v"></i>
                     <div class="popup">
@@ -17,8 +17,8 @@
                     </div>
                 </div>
             </div>
-            <div class="channel">{{cardData?.snippet.channelTitle}}</div>
-            <div class="meta">74K views . {{cardData?.snippet.publishedAt | dateAgo}}</div>
+            <div class="channel">{{cardData?.channelTitle}}</div>
+            <div class="meta">74K views . {{cardData?.uploadedAt | dateAgo}}</div>
         </div>
     </div>
 </a>

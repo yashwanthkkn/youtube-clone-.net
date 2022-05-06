@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ExtendedNavComponent } from './components/extended-nav/extended-nav.component';
 import { SafePipe } from './pipes/safe.pipe';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
