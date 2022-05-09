@@ -28,13 +28,13 @@ export class HistoryItemComponent implements OnInit {
       this.isLoading = false;
     }, 2000);
     // console.log(this.video)
-    this.video_dis.thumbnail = this.video.snippet.thumbnails.medium.url;
-    this.video_dis.channelName = this.video.snippet.channelTitle;
-    this.video_dis.title =this.video.snippet.title;
-    this.video_dis.description = this.video.snippet.description;
-    this.video_dis.id = this.video.id;
-    this.video_dis.iframeurl = "https://www.youtube.com/embed/"+this.video.id;
-    this.video_dis.viewCount = this.video.statistics.viewCount;
+    this.video_dis.thumbnail = this.video.video.imageUrl;
+    this.video_dis.channelName = this.video.video.user.userName;
+    this.video_dis.title =this.video.video.title;
+    this.video_dis.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+    this.video_dis.id = this.video.video.videoId;
+    this.video_dis.iframeurl = "https://www.youtube.com/embed/"+this.video.video.videoId;
+    this.video_dis.viewCount = this.video.video.views;
   }
 
   formatViews(views: string) {
