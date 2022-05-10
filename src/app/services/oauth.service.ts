@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { User } from '../interfaces/User';
+import { UserService } from './user.service';
 declare var gapi: any;
 
 @Injectable({
@@ -11,11 +12,12 @@ export class OauthService {
   GoogleAuth:any = undefined; 
   isAuthenticated : boolean = false;
   authUser:User ;
-  constructor() { 
+  constructor(private userService: UserService) { 
     this.authUser = {
       name:'',
       url:'',
-      email:''
+      email:'',
+      id:''
     }
     this.loadClient();
   }
@@ -55,9 +57,20 @@ export class OauthService {
         this.authUser.email = profile.getEmail()
         this.authUser.name =  profile.getName()
         this.authUser.url = profile.getImageUrl()
-        sessionStorage.setItem('user',JSON.stringify(this.authUser))
-        this.isAuthenticated = true;
-        resolve(authResponse)
+        
+        this.userService.getUser(this.authUser)
+          .subscribe(res=>{
+            var usr:any = res;
+            this.authUser.id = usr.userId;
+            sessionStorage.setItem('user',JSON.stringify(this.authUser))
+            this.isAuthenticated = true;
+            resolve(authResponse)
+          },
+          err=>{
+            console.log(err);
+            this.isAuthenticated = false;
+            reject(err);
+          })
       }catch(err){
         this.isAuthenticated = false;
         reject(err);
@@ -72,7 +85,8 @@ export class OauthService {
       this.authUser = {
         name:'',
         url:'',
-        email:''
+        email:'',
+        id:''
       }
       sessionStorage.removeItem('accessToken');
       sessionStorage.removeItem('user');
