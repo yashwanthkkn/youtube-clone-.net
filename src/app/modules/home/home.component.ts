@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VideosService } from 'src/app/services/videos.service';
 import {YoutubeService} from 'src/app/services/youtube.service'
 
 @Component({
@@ -24,7 +25,8 @@ export class HomeComponent implements OnInit {
 
   currentCategory: string = 'All';
   
-  constructor(private api : YoutubeService) { 
+  constructor(private api : YoutubeService,
+              private video : VideosService) { 
     
   }
 
@@ -33,11 +35,21 @@ export class HomeComponent implements OnInit {
 
     this.isLoading = true;
   
-    (async()=>{
-      this.videos = await this.api.getVideos('firebase',8); 
-      this.categories = await this.api.getVideoCategories();
-      this.isLoading = false;
-    })()
+    this.video.subject.subscribe(
+      (data: any) => {
+        this.videos = data;
+        this.isLoading = false;
+      }
+    );
+    this.video.getVideos();
+
+
+
+    // (async()=>{
+    //   this.videos = await this.api.getVideos('firebase',8); 
+    //   this.categories = await this.api.getVideoCategories();
+    //   this.isLoading = false;
+    // })()
 
     setTimeout(()=>{
       this.labelScrollEvents();
@@ -102,15 +114,15 @@ export class HomeComponent implements OnInit {
   }
 
   onScrollDown(e: any){
-    if(!this.isInfiniteScroll){
-      this.isInfiniteScroll = true;
-      setTimeout(()=>{
-        (async()=>{
-          (this.currentCategory == 'All') ? this.videos.push(...await this.api.getVideos('firebase',8)) : this.videos.push(...await this.api.getVideoByCategory(this.currentCategory,8))
-          this.isInfiniteScroll = false;
-        })()
-      },1000)
-    }
+    // if(!this.isInfiniteScroll){
+    //   this.isInfiniteScroll = true;
+    //   setTimeout(()=>{
+    //     (async()=>{
+    //       (this.currentCategory == 'All') ? this.videos.push(...await this.api.getVideos('firebase',8)) : this.videos.push(...await this.api.getVideoByCategory(this.currentCategory,8))
+    //       this.isInfiniteScroll = false;
+    //     })()
+    //   },1000)
+    // }
       
   }
 

@@ -10,7 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ExtendedNavComponent } from './components/extended-nav/extended-nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [

@@ -63,10 +63,10 @@ export class PlayVideoComponent implements OnInit {
            console.log(videos);
            if(videos !==  null){
              this.video.id = videos.videoId;
-             this.video.channelTitle = videos.title;
+             this.video.channelTitle = videos.user.userName;
              this.video.channelId = videos.user;
              this.video.title = videos.title;
-            //  this.video.description =videos.description;
+             this.video.description ="lorem epsum"
              this.video.thumbnailsUrl = videos.imageUrl;
              this.video.publishedAt = "23/11/2022"
              this.video.likeCount = videos.likes;
@@ -74,13 +74,7 @@ export class PlayVideoComponent implements OnInit {
              this.video.commentCount = "23.5k";
              this.video.duration = "11.50";
              this.video.iframeUrl = "https://www.youtube.com/embed/"+this.video.id;
-             if(sessionStorage.getItem('user')){
-                this.userId = sessionStorage.getItem('user');            
-                this.userId = JSON.parse(this.userId).id;            
-              }
-              else{
-              this.userId = "";            
-            }
+            
            } 
            // else{
            //   return
@@ -88,14 +82,14 @@ export class PlayVideoComponent implements OnInit {
            // }
           }
         )
-        this.history.logHistory(this.videoId,this.userId)   
-        // let relatedVideos = await this.ytube.getRelatedVideo(this.videoId, 15);
-        // this.relatedVideos = relatedVideos;
+        this.history.logHistory(this.videoId,this.oauth.authUser.id)   
+        let relatedVideos = await this.ytube.getRelatedVideo(this.videoId, 15);
+        this.relatedVideos = relatedVideos;
       })();
 
       // fetching comments
       (async()=>{
-        // this.comments = await this.ytube.getComments(this.videoId,20)        
+        this.comments = await this.ytube.getComments(this.videoId,20)        
       })();
     });
   }
