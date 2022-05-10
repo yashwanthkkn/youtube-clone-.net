@@ -27,5 +27,13 @@ export class HistoryService {
       }
     )
   }
+  logHistory(videoId: string, userId: string) {
+    this.http.post(this.url,{VideoId: videoId,UserId: userId}).subscribe(
+      (data:any)=>{
+        
+      }
+    )
+    // return this.http.post(this.url, {VideoId: videoId, UserId: userId});
+  }
 
 }
